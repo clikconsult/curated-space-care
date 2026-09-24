@@ -1,0 +1,3 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { BlogPage } from "@/components/pages";
+export const Route=createFileRoute("/blog")({head:()=>({meta:[{title:"The Journal — LESBEST"},{name:"description",content:"Insights on cleaning, property care and maintaining exceptional spaces."},{property:"og:title",content:"The Journal — LESBEST"},{property:"og:description",content:"Ideas and expertise for maintaining exceptional spaces."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}]}),component:BlogPage});
