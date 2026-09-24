@@ -1,0 +1,3 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { PortfolioPage } from "@/components/pages";
+export const Route=createFileRoute("/portfolio")({head:()=>({meta:[{title:"Our Work — LESBEST"},{name:"description",content:"Explore selected residential, commercial and specialist property-care projects."},{property:"og:title",content:"Our Work — LESBEST"},{property:"og:description",content:"Exceptional results across beautifully considered spaces."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}]}),component:PortfolioPage});

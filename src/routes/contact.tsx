@@ -1,0 +1,3 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { ContactPage } from "@/components/pages";
+export const Route=createFileRoute("/contact")({head:()=>({meta:[{title:"Request a Quote — LESBEST"},{name:"description",content:"Tell LESBEST about your property and receive a considered cleaning recommendation."},{property:"og:title",content:"Request a Quote — LESBEST"},{property:"og:description",content:"Let’s care for your space."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}]}),component:ContactPage});
