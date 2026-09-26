@@ -14,6 +14,19 @@ export const services = [
   { slug: "specialist", name: "Short-Let & Specialist Care", short: "A precise response to complex spaces and exacting briefs.", image: office, included: ["Guest-ready turnovers", "Post-project and event resets", "Delicate material protocols"], suitable: "Short-let apartments, show homes and specialist facilities" },
 ] as const;
 
+export const CONTACT = {
+  phoneDisplay: "+234 (0) 000 000 0000",
+  whatsappNumber: "2340000000000",
+  email: "hello@lesbest.ng",
+};
+
+export function whatsappEnquiry(service?: string) {
+  const message = service
+    ? `Hello LESBEST, I'd like to enquire about your ${service} service. Could you share availability and pricing?`
+    : "Hello LESBEST, I'd like to enquire about your services.";
+  return `https://wa.me/${CONTACT.whatsappNumber}?text=${encodeURIComponent(message)}`;
+}
+
 export const projects = [
   { slug: "ikoyi-residence", title: "Ikoyi Residence", location: "Ikoyi, Lagos", category: "Residential", service: "Residential care", image: living, summary: "A discreet weekly programme for an art-filled family residence." },
   { slug: "lekki-kitchen", title: "Lekki Phase 1 Home", location: "Lekki, Lagos", category: "Deep Cleaning", service: "Deep clean", image: kitchen, summary: "A precise post-harmattan reset across natural stone, timber and metal." },
