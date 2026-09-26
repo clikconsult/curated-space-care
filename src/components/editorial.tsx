@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { images } from "@/lib/site-data";
+import { images, whatsappEnquiry } from "@/lib/site-data";
 import { useState } from "react";
 
 export function Eyebrow({ children, light = false }: { children: React.ReactNode; light?: boolean }) { return <p className={`mb-5 text-[10px] font-semibold uppercase tracking-[0.18em] ${light ? "text-secondary" : "text-secondary"}`}>{children}</p>; }
