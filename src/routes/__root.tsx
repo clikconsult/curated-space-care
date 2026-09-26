@@ -78,7 +78,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "LESBEST — Premium Property Care" },
+      { title: "LESBEST — Premium Property Care in Nigeria" },
       { name: "description", content: "Meticulous cleaning and property care for exceptional spaces." },
       { name: "author", content: "LESBEST" },
       { property: "og:type", content: "website" },
