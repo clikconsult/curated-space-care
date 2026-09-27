@@ -30,8 +30,52 @@ export function whatsappEnquiry(service?: string) {
 export const projects = [] as const;
 
 export const articles = [
-  { slug: "quiet-art-of-property-care", category: "Property Care", date: "18 September 2026", title: "The quiet art of exceptional property care", excerpt: "Why the finest homes in Uyo are maintained through anticipation, consistency and an eye for what others miss.", image: living },
-  { slug: "rainy-season-care", category: "Expert Advice", date: "02 September 2026", title: "Guarding your property through the rainy season", excerpt: "A considered guide to protecting surfaces, fabrics and finishes against Akwa Ibom's humidity and rains.", image: kitchen },
-  { slug: "workplace-standard", category: "Business", date: "19 August 2026", title: "What a well-kept workplace says before you do", excerpt: "The subtle signals that shape a client's first impression.", image: office },
-  { slug: "guest-ready-home", category: "Home", date: "05 August 2026", title: "The considered way to prepare a home for guests", excerpt: "A calm, room-by-room approach to creating an effortless welcome.", image: suite },
+  {
+    slug: "quiet-art-of-property-care", category: "Property Care", date: "18 September 2026",
+    title: "The quiet art of exceptional property care",
+    excerpt: "Why the finest homes in Uyo are maintained through anticipation, consistency and an eye for what others miss.",
+    image: living,
+    intro: "The most beautifully maintained properties rarely feel managed. They simply feel composed: surfaces are clear, materials retain their character and every room is ready for the life that happens within it.",
+    sections: [
+      { heading: "Begin with the character of the space", text: "Exceptional care starts with observation. Natural stone asks for a different approach from timber; fine upholstery needs a different rhythm from a busy entrance. The right standard is never one-size-fits-all." },
+      { heading: "Consistency creates calm", text: "A thoughtful routine protects both the finish of a property and the experience of living or working within it. Clear methods, dependable timing and careful final checks transform cleaning into genuine stewardship." },
+    ],
+    quote: "The best property care is precise enough to be seen, and discreet enough to feel effortless.",
+  },
+  {
+    slug: "rainy-season-care", category: "Expert Advice", date: "02 September 2026",
+    title: "Guarding your property through the rainy season",
+    excerpt: "A considered guide to protecting surfaces, fabrics and finishes against Akwa Ibom's humidity and rains.",
+    image: kitchen,
+    intro: "Uyo's rainy season brings months of heavy, persistent rainfall — and with it, humidity that settles into every room, fabric and surface if it isn't managed with intention.",
+    sections: [
+      { heading: "Moisture finds what you miss", text: "Damp collects quietly in corners, behind furniture and inside cupboards long before it's visible. A considered programme checks these spaces on every visit, not just once a problem has already taken hold." },
+      { heading: "Protecting materials, not just appearances", text: "Timber, upholstery and metal fittings all respond differently to sustained humidity. The right treatment slows deterioration and keeps a property feeling as considered in October as it does in January." },
+    ],
+    quote: "The rains test a property's care the way nothing else does — what looks fine in the dry season shows everything once the humidity sets in.",
+  },
+  {
+    slug: "workplace-standard", category: "Business", date: "19 August 2026",
+    title: "What a well-kept workplace says before you do",
+    excerpt: "The subtle signals that shape a client's first impression.",
+    image: office,
+    intro: "Clients and staff form an impression of a business within seconds of walking in — long before a meeting starts or a pitch is made.",
+    sections: [
+      { heading: "The details people register without noticing", text: "Clear glass, unmarked floors and a reception area that feels attended to all signal the same thing: a business that takes care seriously, in ways both visible and unspoken." },
+      { heading: "A standard that holds under pressure", text: "The real test isn't the first impression — it's whether that same standard holds on an ordinary Tuesday afternoon, mid-quarter, when no one is expecting a visitor. Scheduled, dependable care is what keeps it there." },
+    ],
+    quote: "A well-kept workplace makes its case before anyone says a word.",
+  },
+  {
+    slug: "guest-ready-home", category: "Home", date: "05 August 2026",
+    title: "The considered way to prepare a home for guests",
+    excerpt: "A calm, room-by-room approach to creating an effortless welcome.",
+    image: suite,
+    intro: "Preparing a home for guests shouldn't mean a frantic weekend of catching up on everything that's been postponed. It should be a calm, deliberate pass through the spaces that matter most.",
+    sections: [
+      { heading: "Start with where people gather", text: "Living areas, guest bathrooms and the kitchen carry the most attention during a visit. Beginning there, rather than working room by room in order, makes the biggest difference for the least effort." },
+      { heading: "The small touches that finish the job", text: "Fresh linens, uncluttered surfaces and a home that smells the way it should complete the impression. These details are quick to arrange once the deeper clean is already done." },
+    ],
+    quote: "A guest-ready home isn't about perfection everywhere. It's about care exactly where it will be noticed.",
+  },
 ] as const;
