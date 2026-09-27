@@ -27,7 +27,8 @@ export function whatsappEnquiry(service?: string) {
   return `https://wa.me/${CONTACT.whatsappNumber}?text=${encodeURIComponent(message)}`;
 }
 
-export const projects = [] as const;
+type Project = { slug: string; title: string; location: string; category: string; service: string; image: string; summary: string };
+export const projects: Project[] = [];
 
 export const articles = [
   {
