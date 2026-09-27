@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import { CONTACT } from "@/lib/site-data";
 import lesbestMark from "@/assets/lesbest-mark.png";
 import { LiquidLogo } from "@/components/effects/liquid-logo";
-import { LiquidGlassNav } from "@/components/effects/liquid-glass-nav";
 import { ChatWidget } from "@/components/chat-widget";
 
 const links = [
@@ -28,7 +27,6 @@ export function SiteShell({ children }: { children: ReactNode }) {
   useEffect(() => { setOpen(false); }, []);
   return <div className="min-h-screen bg-background">
     <header className="sticky top-0 z-50 border-b border-border/70 bg-background/95 backdrop-blur-sm">
-      <LiquidGlassNav>
       <div className="mx-auto flex h-18 max-w-[1500px] items-center justify-between px-5 md:px-10">
         <HeaderMark />
         <nav className="hidden items-center gap-7 lg:flex" aria-label="Main navigation">
@@ -37,7 +35,6 @@ export function SiteShell({ children }: { children: ReactNode }) {
         <div className="hidden lg:block"><Button asChild><Link to="/contact">Request a quote</Link></Button></div>
         <Button variant="ghost" size="icon" className="lg:hidden" aria-label={open ? "Close menu" : "Open menu"} onClick={() => setOpen(!open)}>{open ? <X /> : <Menu />}</Button>
       </div>
-      </LiquidGlassNav>
       {open && <nav className="border-t border-border bg-background px-5 py-7 lg:hidden">{links.map(([label, to]) => <Link key={to} to={to} onClick={() => setOpen(false)} className="block border-b border-border py-4 font-display text-3xl">{label}</Link>)}<Button asChild className="mt-6 w-full"><Link to="/contact">Request a quote</Link></Button></nav>}
     </header>
     <main>{children}</main>
