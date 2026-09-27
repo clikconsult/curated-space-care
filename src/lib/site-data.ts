@@ -31,7 +31,7 @@ export const projects = [] as const;
 
 export const articles = [
   { slug: "quiet-art-of-property-care", category: "Property Care", date: "18 September 2026", title: "The quiet art of exceptional property care", excerpt: "Why the finest homes in Uyo are maintained through anticipation, consistency and an eye for what others miss.", image: living },
-  { slug: "harmattan-dust", category: "Expert Advice", date: "02 September 2026", title: "Winning the quiet war against harmattan dust", excerpt: "A considered guide to protecting your home's surfaces through the dry season.", image: kitchen },
+  { slug: "rainy-season-care", category: "Expert Advice", date: "02 September 2026", title: "Guarding your property through the rainy season", excerpt: "A considered guide to protecting surfaces, fabrics and finishes against Akwa Ibom's humidity and rains.", image: kitchen },
   { slug: "workplace-standard", category: "Business", date: "19 August 2026", title: "What a well-kept workplace says before you do", excerpt: "The subtle signals that shape a client's first impression.", image: office },
   { slug: "guest-ready-home", category: "Home", date: "05 August 2026", title: "The considered way to prepare a home for guests", excerpt: "A calm, room-by-room approach to creating an effortless welcome.", image: suite },
 ] as const;
