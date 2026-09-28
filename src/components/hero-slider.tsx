@@ -113,7 +113,7 @@ export function HeroSlider() {
         </AnimatePresence>
       </div>
 
-      <div className={`${wrap} absolute inset-x-0 bottom-0 pb-6 md:pb-9`}>
+      <div className={`${wrap} absolute inset-x-0 bottom-0 pb-6 max-md:pr-[5.5rem] md:pb-9`}>
         <div className="flex items-center gap-4">
           <span className="font-display text-sm tabular-nums text-primary-foreground/80" aria-hidden="true">0{selected + 1} / 0{slides.length}</span>
           <div className="flex flex-1 gap-2 md:max-w-md">
