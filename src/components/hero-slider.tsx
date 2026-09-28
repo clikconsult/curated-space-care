@@ -7,7 +7,10 @@ import { Pause, Play } from "lucide-react";
 import { lazy, Suspense, useCallback, useEffect, useMemo, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Eyebrow } from "@/components/editorial";
-import { images } from "@/lib/site-data";
+import bathroom from "@/assets/lesbest-clean-bathroom.webp";
+import industrial from "@/assets/lesbest-clean-industrial.webp";
+import kitchen from "@/assets/lesbest-clean-kitchen.webp";
+import bedroom from "@/assets/lesbest-clean-bedroom.webp";
 
 const ShaderBackground = lazy(() => import("@/components/effects/shader-background").then((m) => ({ default: m.ShaderBackground })));
 
@@ -16,28 +19,28 @@ const wrap = "mx-auto max-w-[1500px] px-5 md:px-10";
 
 const slides = [
   {
-    image: images.living, alt: "Serene luxury living room",
+    image: bathroom, position: "50% 43%", alt: "A Lesbest cleaner polishing the floor of a luxury bathroom",
     eyebrow: "Premium property care · Uyo, Akwa Ibom",
     line: "A higher standard", accent: "of clean.",
     body: "Meticulous cleaning and property-care services for homes, businesses and spaces that demand exceptional standards.",
     primary: { label: "Request a quote", to: "/contact" }, secondary: { label: "Explore services", to: "/services" },
   },
   {
-    image: images.office, alt: "Executive workplace, immaculately kept",
+    image: industrial, position: "50% 45%", alt: "Lesbest team cleaning a food-and-beverage production facility",
     eyebrow: "Industrial & commercial cleaning",
     line: "Where business happens,", accent: "spotless.",
     body: "Scheduled programmes for offices, factories and production floors, built around your operating hours.",
     primary: { label: "Talk to us", to: "/contact" }, secondary: { label: "Our services", to: "/services" },
   },
   {
-    image: images.kitchen, alt: "Immaculate premium kitchen",
+    image: kitchen, position: "50% 32%", alt: "A Lesbest cleaner wiping down a stone kitchen counter",
     eyebrow: "Deep cleaning",
     line: "Reset every surface,", accent: "top to bottom.",
     body: "For move-ins, post-renovation spaces and seasonal resets: detailed work on every finish and fitting.",
     primary: { label: "Book a deep clean", to: "/contact" }, secondary: { label: "How we work", to: "/about" },
   },
   {
-    image: images.suite, alt: "Calm, beautifully presented suite",
+    image: bedroom, position: "50% 20%", alt: "A Lesbest cleaner dusting a bedside table in a calm master bedroom",
     eyebrow: "Home & resident cleaning",
     line: "Your home, kept", accent: "quietly perfect.",
     body: "Discreet, consistent care from a familiar team, so your space stays exactly as you like it.",
@@ -82,7 +85,7 @@ export function HeroSlider() {
           {slides.map((slide, i) => (
             <div key={slide.image} className="relative h-full min-w-0 flex-[0_0_100%]" aria-roledescription="slide" aria-label={`${i + 1} of ${slides.length}`}>
               <img
-                src={slide.image} alt={slide.alt} width={1920} height={1280}
+                src={slide.image} alt={slide.alt} style={{ objectPosition: slide.position }} width={slide.image === industrial ? 1536 : 1024} height={slide.image === industrial ? 1024 : 1536}
                 loading={i === 0 ? "eager" : "lazy"} fetchPriority={i === 0 ? "high" : "auto"}
                 className={`absolute inset-0 h-full w-full object-cover opacity-75 ease-out ${!reduce && i === selected ? "scale-110 duration-[9000ms]" : "scale-100 duration-[1600ms]"} transition-transform`}
               />
