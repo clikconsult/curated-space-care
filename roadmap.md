@@ -1,8 +1,8 @@
-# LESBEST build roadmap
+# Roadmap
 
-- [ ] Establish the brand design system and shared shell
-- [ ] Build six primary pages
-- [ ] Build project and article detail pages
-- [ ] Add filtering, before/after, menu, and quote form interactions
-- [ ] Add route-specific metadata
-- [ ] Verify desktop and mobile experiences
+## Completed
+- [x] Rewrite site content for Nigerian audience
+- [x] Add WhatsApp enquiry links with prefilled service message (+234 number)
+
+## Open
+- [ ] Advise/implement R3F + liquid glass, scroll world, liquid logo, shader gradient — consultative answer first, then pick effects to build if user approves
