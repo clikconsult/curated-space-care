@@ -12,14 +12,21 @@ const links = [
   ["Portfolio", "/portfolio"], ["Blog", "/blog"], ["Contact", "/contact"],
 ] as const;
 
-export function Mark({ light = false }: { light?: boolean }) {
-  return <Link to="/" aria-label="LESBEST home" className="inline-flex items-center">
-    <img src={lesbestMark} alt="LESBEST" className={`h-11 w-auto ${light ? "brightness-0 invert" : ""}`} />
-  </Link>;
+function Wordmark({ light = false }: { light?: boolean }) {
+  return <span className="flex flex-col leading-none">
+    <span className={`font-display text-[1.9rem] tracking-tight ${light ? "text-primary-foreground" : "text-primary"}`}>LESBEST</span>
+    <span className={`mt-1.5 text-[8.5px] font-semibold uppercase tracking-[0.26em] ${light ? "text-primary-foreground/70" : "text-secondary"}`}>Cleaning Services</span>
+  </span>;
 }
 
+export function Mark({ light = false }: { light?: boolean }) {
+  return <Link to="/" aria-label="Lesbest Cleaning Services home" className="inline-flex items-center gap-3">
+    <img src={lesbestMark} alt="" className={`h-11 w-auto ${light ? "brightness-0 invert" : ""}`} />
+    <Wordmark light={light} />
+  </Link>;
+}
 function HeaderMark() {
-  return <Link to="/" aria-label="LESBEST home" className="inline-flex items-center"><LiquidLogo /></Link>;
+  return <Link to="/" aria-label="Lesbest Cleaning Services home" className="inline-flex items-center gap-3"><LiquidLogo /><Wordmark /></Link>;
 }
 
 export function SiteShell({ children }: { children: ReactNode }) {

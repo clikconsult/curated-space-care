@@ -16,7 +16,7 @@ export function LiquidLogo({ light = false, className = "" }: { light?: boolean;
 }
 
 function PlainLogo({ light, className }: { light: boolean; className: string }) {
-  return <img src={lesbestMark} alt="LESBEST" className={`h-11 w-auto ${light ? "brightness-0 invert" : ""} ${className}`} />;
+  return <img src={lesbestMark} alt="" className={`h-11 w-auto ${light ? "brightness-0 invert" : ""} ${className}`} />;
 }
 
 function LiquidLogoAnimated({ light, className }: { light: boolean; className: string }) {
@@ -37,7 +37,7 @@ function LiquidLogoAnimated({ light, className }: { light: boolean; className: s
       </svg>
       <img
         src={lesbestMark}
-        alt="LESBEST"
+        alt=""
         style={{ filter: `url(#${id})` }}
         className={`h-11 w-auto animate-[liquid-fade_1.1s_ease-out_both] ${light ? "brightness-0 invert" : ""} ${className}`}
       />
