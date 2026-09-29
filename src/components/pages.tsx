@@ -5,6 +5,7 @@ import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { HeroSlider } from "@/components/hero-slider";
 import { ArrowLink, BeforeAfter, Eyebrow, PageHero, QuoteBand, SectionTitle } from "@/components/editorial";
+import introImage from "@/assets/lesbest-consult-livingroom.webp";
 const ShaderBackground = lazy(() => import("@/components/effects/shader-background").then(m => ({ default: m.ShaderBackground })));
 import { articles, CONTACT, images, projects, services, whatsappEnquiry } from "@/lib/site-data";
 
@@ -17,7 +18,7 @@ function PortfolioGrid({ limit }: { limit?: number }) { const shown=limit?projec
 
 export function HomePage(){return <>
   <HeroSlider/>
-  <section className={`${wrap} ${section} grid gap-14 md:grid-cols-12 md:items-center`}><div className="md:col-span-5"><Eyebrow>Our approach</Eyebrow><h2 className="text-6xl leading-[.88] md:text-8xl">More than clean.<br/><em className="text-secondary">Meticulously finished.</em></h2><p className="mt-8 max-w-md text-base leading-8 text-muted-foreground">We care for each property as a complete environment. Every surface, material and finishing detail receives the right method, delivered with discretion and consistency.</p></div><div className="md:col-start-7 md:col-span-6"><img src={images.kitchen} alt="Immaculate premium kitchen" loading="lazy" className="aspect-[4/5] w-full object-cover" width={1600} height={1920}/></div></section>
+  <section className={`${wrap} ${section} grid gap-14 md:grid-cols-12 md:items-center`}><div className="md:col-span-5"><Eyebrow>Our approach</Eyebrow><h2 className="text-6xl leading-[.88] md:text-8xl">More than clean.<br/><em className="text-secondary">Meticulously finished.</em></h2><p className="mt-8 max-w-md text-base leading-8 text-muted-foreground">We care for each property as a complete environment. Every surface, material and finishing detail receives the right method, delivered with discretion and consistency.</p></div><div className="md:col-start-7 md:col-span-6"><img src={introImage} alt="A Lesbest cleaner sharing a warm word with a client in her sunlit living room" loading="lazy" className="aspect-[4/5] w-full object-cover object-[38%_center]" width={1312} height={784}/></div></section>
   <ServicePreview/>
   <section className="relative overflow-hidden bg-primary py-20 text-primary-foreground md:py-28"><Suspense fallback={null}><ShaderBackground className="opacity-70"/></Suspense><div className={`${wrap} relative`}><Eyebrow light>Our promise</Eyebrow><h2 className="max-w-5xl text-6xl leading-[.9] md:text-8xl">The standard is in the <em className="text-accent">details.</em></h2><div className="mt-16 grid border-t border-primary-foreground/25 md:grid-cols-4">{["Precision","Professionalism","Consistency","Care"].map((x,i)=><div key={x} className="border-b border-primary-foreground/25 py-8 md:border-r md:px-7 first:pl-0"><span className="font-display text-5xl text-secondary">0{i+1}</span><h3 className="mt-8 font-sans text-xs uppercase tracking-[.14em]">{x}</h3></div>)}</div></div></section>
   <section className={`${wrap} ${section}`}><SectionTitle label="Transformation">See the difference.</SectionTitle><BeforeAfter/></section>
