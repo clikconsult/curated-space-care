@@ -6,13 +6,15 @@ import suite from "@/assets/lesbest-suite.jpg";
 export const images = { living, kitchen, office, suite };
 
 export const services = [
-  { slug: "industrial", name: "Industrial Cleaning", short: "Scheduled care for factories, warehouses and production floors.", image: office, included: ["Programmes built around your operating hours", "Heavy-duty floor and surface treatment", "Compliance-ready sanitation standards"], suitable: "Factories, warehouses, production floors and industrial facilities across Akwa Ibom" },
+  { slug: "industrial", name: "Industrial Cleaning", short: "Scheduled care for factories, warehouses and production floors.", image: industrialFloor, included: ["Programmes built around your operating hours", "Heavy-duty floor and surface treatment", "Compliance-ready sanitation standards"], suitable: "Factories, warehouses, production floors and industrial facilities across Akwa Ibom" },
   { slug: "deep-cleaning", name: "Deep Cleaning", short: "A full, top-to-bottom reset for a property that needs more than a routine pass.", image: kitchen, included: ["Detailed high and low-level clean", "Appliance and joinery attention", "Post-renovation dust and residue removal"], suitable: "Move-ins, post-renovation spaces and seasonal resets" },
   { slug: "home", name: "Home Cleaning", short: "Immaculate, discreet care for exceptional homes.", image: living, included: ["Tailored room-by-room care", "Kitchen and bathroom detailing", "Surface and finish-specific methods"], suitable: "Private homes and family residences across Uyo and Akwa Ibom State" },
   { slug: "resident", name: "Resident Cleaning", short: "Ongoing service for estates and residences, with a team who knows the property.", image: suite, included: ["Consistent, familiar team on every visit", "Estate and common-area care", "Flexible scheduling"], suitable: "Estates, residences and serviced apartments" },
   { slug: "fumigation", name: "Fumigation", short: "Pest control and treatment, done safely and discreetly.", image: living, included: ["Full property inspection", "Treatment safe for people and pets once cleared", "Follow-up care on request"], suitable: "Homes and commercial spaces across Uyo, Akwa Ibom, Calabar and Port Harcourt" },
   { slug: "maintenance", name: "Maintenance Services", short: "A standing arrangement so your space stays exactly as it was left.", image: office, included: ["Year-round scheduled upkeep", "Consistent standards, visit after visit", "Priority attention for standing clients"], suitable: "Offices, residences and facilities that need ongoing care" },
 ] as const;
+
+import industrialFloor from "@/assets/lesbest-industrial-floor.webp";
 
 export const CONTACT = {
   phoneDisplay: "+234 808 718 6804",
