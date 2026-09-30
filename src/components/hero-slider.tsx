@@ -11,7 +11,7 @@ import bathroom from "@/assets/lesbest-clean-bathroom.webp";
 import industrial from "@/assets/lesbest-clean-industrial.webp";
 import kitchen from "@/assets/lesbest-clean-kitchen.webp";
 import bedroom from "@/assets/lesbest-clean-bedroom.webp";
-import teamPortraitAsset from "@/assets/lesbest-team-portrait.png.asset.json";
+import teamPortraitAsset from "@/assets/lesbest-team-deep-clean.png.asset.json";
 
 const ShaderBackground = lazy(() => import("@/components/effects/shader-background").then((m) => ({ default: m.ShaderBackground })));
 
