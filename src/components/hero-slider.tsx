@@ -20,10 +20,10 @@ const wrap = "mx-auto max-w-[1500px] px-5 md:px-10";
 
 const slides = [
   {
-    image: teamPortraitAsset.url, position: "50% 38%", alt: "The Lesbest team of three uniformed professionals ready for work in a luxury living room",
-    eyebrow: "The Lesbest team · Uyo, Akwa Ibom",
-    line: "Trained hands,", accent: "trusted standards.",
-    body: "A uniformed team selected for judgement, care and consistency — the people behind every meticulous finish.",
+    image: teamPortraitAsset.url, position: "50% 45%", alt: "Lesbest professionals deep cleaning a luxury living space",
+    eyebrow: "Deep cleaning · Uyo, Akwa Ibom",
+    line: "A deeper clean,", accent: "beautifully finished.",
+    body: "Detailed care for every surface, finish and fitting — delivered by a uniformed team with a meticulous eye.",
     primary: { label: "Request a quote", to: "/contact" }, secondary: { label: "Meet the team", to: "/about" },
   },
   {
