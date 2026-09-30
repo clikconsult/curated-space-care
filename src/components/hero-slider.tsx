@@ -11,6 +11,7 @@ import bathroom from "@/assets/lesbest-clean-bathroom.webp";
 import industrial from "@/assets/lesbest-clean-industrial.webp";
 import kitchen from "@/assets/lesbest-clean-kitchen.webp";
 import bedroom from "@/assets/lesbest-clean-bedroom.webp";
+import teamPortraitAsset from "@/assets/lesbest-team-portrait.png.asset.json";
 
 const ShaderBackground = lazy(() => import("@/components/effects/shader-background").then((m) => ({ default: m.ShaderBackground })));
 
@@ -18,6 +19,13 @@ const DELAY = 7000;
 const wrap = "mx-auto max-w-[1500px] px-5 md:px-10";
 
 const slides = [
+  {
+    image: teamPortraitAsset.url, position: "50% 38%", alt: "The Lesbest team of three uniformed professionals ready for work in a luxury living room",
+    eyebrow: "The Lesbest team · Uyo, Akwa Ibom",
+    line: "Trained hands,", accent: "trusted standards.",
+    body: "A uniformed team selected for judgement, care and consistency — the people behind every meticulous finish.",
+    primary: { label: "Request a quote", to: "/contact" }, secondary: { label: "Meet the team", to: "/about" },
+  },
   {
     image: bathroom, position: "50% 43%", alt: "A Lesbest cleaner polishing the floor of a luxury bathroom",
     eyebrow: "Premium property care · Uyo, Akwa Ibom",
@@ -85,7 +93,7 @@ export function HeroSlider() {
           {slides.map((slide, i) => (
             <div key={slide.image} className="relative h-full min-w-0 flex-[0_0_100%]" aria-roledescription="slide" aria-label={`${i + 1} of ${slides.length}`}>
               <img
-                src={slide.image} alt={slide.alt} style={{ objectPosition: slide.position }} width={slide.image === industrial ? 1536 : 1024} height={slide.image === industrial ? 1024 : 1536}
+                src={slide.image} alt={slide.alt} style={{ objectPosition: slide.position }} width={slide.image === industrial || slide.image === teamPortraitAsset.url ? 1536 : 1024} height={slide.image === industrial || slide.image === teamPortraitAsset.url ? 1024 : 1536}
                 loading={i === 0 ? "eager" : "lazy"} fetchPriority={i === 0 ? "high" : "auto"}
                 className={`absolute inset-0 h-full w-full object-cover opacity-75 ease-out ${!reduce && i === selected ? "scale-110 duration-[9000ms]" : "scale-100 duration-[1600ms]"} transition-transform`}
               />
