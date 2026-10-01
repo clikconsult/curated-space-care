@@ -2,7 +2,7 @@ import living from "@/assets/lesbest-living.jpg";
 import kitchen from "@/assets/lesbest-kitchen.jpg";
 import office from "@/assets/lesbest-office.jpg";
 import suite from "@/assets/lesbest-suite.jpg";
-import deepCleanTeam from "@/assets/lesbest-team-portrait.png.asset.json";
+import deepCleanTeam from "@/assets/lesbest-team-deep-clean.png.asset.json";
 
 export const images = { living, kitchen, office, suite };
 
