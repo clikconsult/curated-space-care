@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Eyebrow } from "@/components/editorial";
 import bathroom from "@/assets/lesbest-clean-bathroom.webp";
 import industrial from "@/assets/lesbest-clean-industrial.webp";
-import kitchen from "@/assets/lesbest-clean-kitchen.webp";
+import kitchen from "@/assets/lesbest-deep-clean-kitchen.webp";
 import bedroom from "@/assets/lesbest-clean-bedroom.webp";
 import teamIntro from "@/assets/lesbest-team-intro.webp";
 
@@ -41,7 +41,7 @@ const slides = [
     primary: { label: "Talk to us", to: "/contact" }, secondary: { label: "Our services", to: "/services" },
   },
   {
-    image: kitchen, position: "50% 32%", alt: "A Lesbest cleaner wiping down a stone kitchen counter",
+    image: kitchen, position: "50% 0%", alt: "Two Lesbest cleaners wiping a stone counter and vacuuming the floor of a modern Nigerian kitchen",
     eyebrow: "Deep cleaning",
     line: "Reset every surface,", accent: "top to bottom.",
     body: "For move-ins, post-renovation spaces and seasonal resets: detailed work on every finish and fitting.",
@@ -93,7 +93,7 @@ export function HeroSlider() {
           {slides.map((slide, i) => (
             <div key={slide.image} className="relative h-full min-w-0 flex-[0_0_100%]" aria-roledescription="slide" aria-label={`${i + 1} of ${slides.length}`}>
               <img
-                src={slide.image} alt={slide.alt} style={{ objectPosition: slide.position }} width={slide.image === industrial || slide.image === teamIntro ? 1536 : 1024} height={slide.image === industrial || slide.image === teamIntro ? 1024 : 1536}
+                src={slide.image} alt={slide.alt} style={{ objectPosition: slide.position, transformOrigin: slide.image === kitchen ? "50% 0%" : undefined }} width={slide.image === industrial || slide.image === teamIntro || slide.image === kitchen ? 1536 : 1024} height={slide.image === industrial || slide.image === teamIntro || slide.image === kitchen ? 1024 : 1536}
                 loading={i === 0 ? "eager" : "lazy"} fetchPriority={i === 0 ? "high" : "auto"}
                 className={`absolute inset-0 h-full w-full object-cover opacity-75 ease-out ${!reduce && i === selected ? "scale-110 duration-[9000ms]" : "scale-100 duration-[1600ms]"} transition-transform`}
               />
