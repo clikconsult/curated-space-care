@@ -20,11 +20,11 @@ const wrap = "mx-auto max-w-[1500px] px-5 md:px-10";
 
 const slides = [
   {
-    image: teamIntro, position: "50% 38%", alt: "The Lesbest team of three uniformed professionals ready for work",
-    eyebrow: "The Lesbest team · Uyo, Akwa Ibom",
-    line: "Trained hands,", accent: "trusted standards.",
-    body: "A uniformed team selected for judgement, care and consistency — the people behind every meticulous finish.",
-    primary: { label: "Request a quote", to: "/contact" }, secondary: { label: "Meet the team", to: "/about" },
+    image: teamIntro, position: "50% 38%", alt: "Three Lesbest cleaning professionals with floor-care equipment in a luxury living room",
+    eyebrow: "Cleaning and property care in Uyo, Akwa Ibom",
+    line: "Every space,", accent: "properly cared for.",
+    body: "From private homes to offices and production floors, we deliver thorough, consistent cleaning that leaves every space ready to use.",
+    primary: { label: "Request a quote", to: "/contact" }, secondary: { label: "Explore services", to: "/services" },
   },
   {
     image: bathroom, position: "50% 43%", alt: "A Lesbest cleaner polishing the floor of a luxury bathroom",
