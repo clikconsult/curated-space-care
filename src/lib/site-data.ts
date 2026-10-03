@@ -15,7 +15,7 @@ export const services = [
   { slug: "maintenance", name: "Maintenance Services", short: "A standing arrangement so your space stays exactly as it was left.", image: office, included: ["Year-round scheduled upkeep", "Consistent standards, visit after visit", "Priority attention for standing clients"], suitable: "Offices, residences and facilities that need ongoing care" },
 ] as const;
 
-import industrialFloor from "@/assets/lesbest-industrial-floor.webp";
+import industrialFloor from "@/assets/lesbest-industrial-cleaning.webp";
 
 export const CONTACT = {
   phoneDisplay: "+234 808 718 6804",
