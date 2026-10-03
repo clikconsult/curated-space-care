@@ -20,7 +20,7 @@ const wrap = "mx-auto max-w-[1500px] px-5 md:px-10";
 
 const slides = [
   {
-    image: teamIntro, position: "50% 38%", alt: "Three Lesbest cleaning professionals with floor-care equipment in a luxury living room",
+    image: teamIntro, position: "50% 0%", alt: "Three Lesbest cleaning professionals with floor-care equipment in a luxury living room",
     eyebrow: "Cleaning and property care in Uyo, Akwa Ibom",
     line: "Every space,", accent: "properly cared for.",
     body: "From private homes to offices and production floors, we deliver thorough, consistent cleaning that leaves every space ready to use.",
