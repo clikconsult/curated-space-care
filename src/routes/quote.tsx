@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { QuoteEstimator } from "@/components/quote-estimator";
 import { Eyebrow } from "@/components/editorial";
-import { photos } from "@/lib/site-data";
 
 const wrap = "mx-auto max-w-[1500px] px-5 md:px-10";
 
