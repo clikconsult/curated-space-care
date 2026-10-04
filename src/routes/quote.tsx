@@ -6,8 +6,8 @@ const wrap = "mx-auto max-w-[1500px] px-5 md:px-10";
 
 export const Route = createFileRoute("/quote")({
   validateSearch: (search: Record<string, unknown>) => ({
-    service: typeof search.service === "string" ? search.service : "",
-    type: typeof search.type === "string" ? search.type : "",
+    service: typeof search["service"] === "string" ? search["service"] : "",
+    type: typeof search["type"] === "string" ? search["type"] : "",
   }),
   head: () => ({
     meta: [

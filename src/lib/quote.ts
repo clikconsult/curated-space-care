@@ -40,7 +40,7 @@ const rates: Record<string, { perSqm: number; min: number }> = {
   industrial: { perSqm: 200, min: 150000 },
 };
 
-export const SIZE = { min: 40, max: 1500, step: 10, initial: 180 } as const;
+const DEFAULT_RATE = { perSqm: 180, min: 35000 };
 
 export type EstimateInput = {
   propertySlug: string;
