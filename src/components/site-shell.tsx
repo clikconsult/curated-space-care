@@ -45,7 +45,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
       {open && <nav className="border-t border-border bg-background px-5 py-7 lg:hidden">{links.map(([label, to]) => <Link key={to} to={to} onClick={() => setOpen(false)} className="block border-b border-border py-4 font-display text-3xl">{label}</Link>)}<Button asChild className="mt-6 w-full"><Link to="/contact">Request a quote</Link></Button></nav>}
     </header>
     <main>{children}</main>
-    <ChatWidget />
+    <div className="hidden md:contents"><ChatWidget /></div>
     <footer className="bg-primary px-5 py-16 text-primary-foreground md:px-10 md:py-24">
       <div className="mx-auto grid max-w-[1500px] gap-12 md:grid-cols-12">
         <div className="md:col-span-5"><Mark light /><p className="mt-6 max-w-sm text-sm leading-7 text-primary-foreground/70">Meticulous cleaning and property care for Nigeria's finest homes, workplaces and spaces that demand exceptional standards.</p></div>

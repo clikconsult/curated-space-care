@@ -124,7 +124,7 @@ export function QuoteEstimator({
                 square metres
               </span>
             </p>
-            <p className="text-[11px] leading-5 text-muted-foreground">
+            <p className="text-[11px] font-medium leading-5 text-foreground/65">
               Roughly {sqm < 90 ? "one bedroom" : `${Math.max(1, Math.round(sqm / 60))} bedrooms`}
             </p>
           </div>
@@ -138,7 +138,7 @@ export function QuoteEstimator({
             aria-label="Approximate floor area in square metres"
             className="estimate-slider mt-6 w-full"
           />
-          <div className="mt-3 flex justify-between text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
+          <div className="mt-3 flex justify-between text-[11px] font-medium uppercase tracking-[0.14em] text-foreground/60">
             <span>{SIZE.min} m²</span>
             <span>{SIZE.max} m² and above</span>
           </div>
@@ -165,20 +165,19 @@ export function QuoteEstimator({
                   role="checkbox"
                   aria-checked={active}
                   onClick={() => toggleAddOn(extra.slug)}
-                  className="group flex items-center justify-between gap-4 border-b border-border py-4 text-left"
+                  className="group flex items-baseline gap-3 border-b border-border py-4 text-left"
                 >
-                  <span className={`text-base transition-colors ${active ? "text-primary" : "text-muted-foreground group-hover:text-primary"}`}>
-                    {extra.label}
-                  </span>
                   <span
                     aria-hidden
-                    className={`flex size-5 shrink-0 items-center justify-center border text-[10px] transition-colors ${
-                      active
-                        ? "border-secondary bg-secondary text-secondary-foreground"
-                        : "border-border text-transparent group-hover:border-secondary"
+                    className={`mt-2 h-px shrink-0 transition-all duration-300 ${
+                      active ? "w-8 bg-secondary" : "w-4 bg-border group-hover:bg-secondary"
                     }`}
-                  >
-                    ✓
+                  />
+                  <span className={`flex-1 text-base transition-colors ${active ? "text-primary" : "text-muted-foreground group-hover:text-primary"}`}>
+                    {extra.label}
+                  </span>
+                  <span className="text-[11px] uppercase tracking-[0.12em] text-foreground/55">
+                    +{formatNaira(extra.price)}
                   </span>
                 </button>
               );

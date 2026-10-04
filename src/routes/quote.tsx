@@ -50,7 +50,7 @@ function QuotePage() {
         </div>
       </section>
 
-      <section className={`${wrap} py-16 md:py-24`}>
+      <section className={`${wrap} pt-14 pb-8 md:pt-24 md:pb-14`}>
         <QuoteEstimator initialService={service} initialProperty={type} />
       </section>
 
