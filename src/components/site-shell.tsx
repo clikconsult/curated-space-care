@@ -9,7 +9,7 @@ import { ChatWidget } from "@/components/chat-widget";
 
 const links = [
   ["Home", "/"], ["Services", "/services"], ["About", "/about"],
-  ["Portfolio", "/portfolio"], ["Blog", "/blog"], ["Contact", "/contact"],
+  ["Portfolio", "/portfolio"], ["Blog", "/blog"], ["Estimate", "/quote"], ["Contact", "/contact"],
 ] as const;
 
 function Wordmark({ light = false }: { light?: boolean }) {

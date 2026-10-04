@@ -63,7 +63,8 @@ function QuotePage() {
             </h2>
           </div>
           <p className="max-w-sm text-sm leading-7 text-primary-foreground/70 md:col-span-3 md:col-start-10">
-            {photos.consult.alt}
+            A walk-through takes fifteen minutes. We look at materials, traffic and the finish you
+            expect, then confirm a firm price in writing.
           </p>
         </div>
       </section>
