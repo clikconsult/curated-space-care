@@ -53,7 +53,7 @@ function OptionList({
               <span>
                 <span className="block text-lg leading-tight md:text-xl">{option.label}</span>
                 {option.note && (
-                  <span className="mt-1 block text-[11px] leading-5 text-muted-foreground">
+                  <span className="mt-1 block text-[11px] font-medium leading-5 text-foreground/60">
                     {option.note}
                   </span>
                 )}
