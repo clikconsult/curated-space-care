@@ -42,6 +42,8 @@ const rates: Record<string, { perSqm: number; min: number }> = {
 
 const DEFAULT_RATE = { perSqm: 180, min: 35000 };
 
+export const SIZE = { min: 40, max: 1500, step: 10, initial: 180 } as const;
+
 export type EstimateInput = {
   propertySlug: string;
   serviceSlug: string;
@@ -66,7 +68,7 @@ export type Estimate = {
 const round1000 = (n: number) => Math.round(n / 1000) * 1000;
 
 export function buildEstimate({ propertySlug, serviceSlug, sqm, frequencySlug, addOnSlugs }: EstimateInput): Estimate {
-  const rate = rates[serviceSlug] ?? rates.home;
+  const rate = rates[serviceSlug] ?? DEFAULT_RATE;
   const property = propertyTypes.find((p) => p.slug === propertySlug) ?? propertyTypes[0];
   const frequency = frequencies.find((f) => f.slug === frequencySlug) ?? frequencies[0];
   const service = services.find((s) => s.slug === serviceSlug) ?? services[0];
