@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { QuoteEstimator } from "@/components/quote-estimator";
 import { Eyebrow } from "@/components/editorial";
+import { seo } from "@/lib/seo";
 
 const wrap = "mx-auto max-w-[1500px] px-5 md:px-10";
 
@@ -9,23 +10,16 @@ export const Route = createFileRoute("/quote")({
     service: typeof search["service"] === "string" ? search["service"] : "",
     type: typeof search["type"] === "string" ? search["type"] : "",
   }),
-  head: () => ({
-    meta: [
-      { title: "Instant Estimate — LESBEST Property Care" },
-      {
-        name: "description",
-        content:
-          "Build an indicative estimate for premium cleaning and property care in Uyo, Akwa Ibom, Calabar and Port Harcourt, then send it straight to the team.",
-      },
-      { property: "og:title", content: "Instant Estimate — LESBEST Property Care" },
-      {
-        property: "og:description",
-        content: "Set the property, service and rhythm. See an indicative range, then send it to us.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
+  head: () =>
+    seo({
+      title: "Instant Estimate — LESBEST Property Care",
+      description:
+        "Build an indicative estimate for premium cleaning and property care in Uyo, Akwa Ibom, Calabar and Port Harcourt, then send it straight to the team.",
+      ogDescription: "Set the property, service and rhythm. See an indicative range, then send it to us.",
+      path: "/quote",
+      image: "quote",
+      imageAlt: "A calm marble living room with palm trees outside the sliding doors",
+    }),
   component: QuotePage,
 });
 

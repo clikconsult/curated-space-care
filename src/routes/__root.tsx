@@ -83,7 +83,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "Meticulous cleaning and property care for exceptional spaces." },
       { name: "author", content: "LESBEST" },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "LESBEST" },
+      { property: "og:locale", content: "en_NG" },
+      { property: "og:image", content: "https://curated-space-care.lovable.app/og/default.jpg" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: "https://curated-space-care.lovable.app/og/default.jpg" },
     ],
     links: [
       {

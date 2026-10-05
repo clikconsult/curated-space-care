@@ -1,3 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { seo } from "@/lib/seo";
 import { ContactPage } from "@/components/pages";
-export const Route=createFileRoute("/contact")({head:()=>({meta:[{title:"Request a Quote — LESBEST"},{name:"description",content:"Tell LESBEST about your property and receive a considered cleaning recommendation."},{property:"og:title",content:"Request a Quote — LESBEST"},{property:"og:description",content:"Let’s care for your space."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}]}),component:ContactPage});
+export const Route=createFileRoute("/contact")({head:()=>seo({title:"Request a Quote — LESBEST",description:"Tell LESBEST about your property and receive a considered cleaning recommendation.",ogDescription:"Let’s care for your space.",path:"/contact",image:"contact",imageAlt:"A bright marble reception area with a sofa and palm trees beyond the glass doors"}),component:ContactPage});
