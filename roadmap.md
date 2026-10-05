@@ -8,6 +8,7 @@
 
 ## Open
 - [ ] AI property brief: client describes the space, model recommends services and drafts a tailored enquiry (Lovable AI Gateway)
-- [ ] Confirm the published homepage serves the corrected copy; report whether live is behind the preview
+- [ ] Suggest premium social and marketing features; answer the user's question
+- [ ] Confirm the published homepage serves the corrected copy; live is currently behind the preview — awaiting the user's Publish → Update
 - [ ] Consider R3F, liquid glass, scroll world and liquid logo only if a later visual pass needs them
 - [ ] Replace the placeholder rate card in src/lib/quote.ts with the company's real rates
