@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState, type ReactNode } from "react";
 import { Button } from "@/components/ui/button";
-import { CONTACT } from "@/lib/site-data";
+import { CONTACT, services } from "@/lib/site-data";
 import lesbestMark from "@/assets/lesbest-mark.png";
 import { LiquidLogo } from "@/components/effects/liquid-logo";
 import { ChatWidget } from "@/components/chat-widget";
@@ -50,7 +50,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
       <div className="mx-auto grid max-w-[1500px] gap-12 md:grid-cols-12">
         <div className="md:col-span-5"><Mark light /><p className="mt-6 max-w-sm text-sm leading-7 text-primary-foreground/70">Meticulous cleaning and property care for Nigeria's finest homes, workplaces and spaces that demand exceptional standards.</p></div>
         <div className="md:col-span-2"><FooterTitle>Navigate</FooterTitle>{links.map(([label,to]) => <Link key={to} to={to} className="mb-3 block text-sm text-primary-foreground/70 hover:text-accent">{label}</Link>)}</div>
-        <div className="md:col-span-2"><FooterTitle>Services</FooterTitle>{["Industrial", "Deep cleaning", "Home cleaning", "Fumigation"].map(x => <Link key={x} to="/services" className="mb-3 block text-sm text-primary-foreground/70 hover:text-accent">{x}</Link>)}</div>
+        <div className="md:col-span-2"><FooterTitle>Services</FooterTitle>{services.map(x => <Link key={x.slug} to="/services/$serviceSlug" params={{ serviceSlug: x.slug }} className="mb-3 block text-sm text-primary-foreground/70 hover:text-accent">{x.name}</Link>)}</div>
         <div className="md:col-span-3"><FooterTitle>Contact</FooterTitle><p className="text-sm leading-7 text-primary-foreground/70">{CONTACT.phoneDisplay}<br/>{CONTACT.email}<br/>Uyo · Akwa Ibom · Calabar · Port Harcourt</p></div>
       </div>
       <div className="mx-auto mt-16 flex max-w-[1500px] flex-col gap-5 border-t border-primary-foreground/20 pt-8 md:flex-row md:items-end md:justify-between"><p className="font-display text-4xl md:text-6xl">A higher standard of clean.</p><p className="text-[10px] uppercase tracking-[0.15em] text-primary-foreground/50">© 2026 LESBEST</p></div>
