@@ -29,18 +29,15 @@ import contactHeroImg from "@/assets/lesbest-contact-reception.webp";
 import closingLivingImg from "@/assets/lesbest-home-closing-living-room.webp";
 import consultImg from "@/assets/lesbest-home-consultation.webp";
 import journalPropertyCareImg from "@/assets/lesbest-journal-property-care.webp";
-import journalRainyImg from "@/assets/lesbest-journal-rainy-season.webp";
-import journalWorkplaceImg from "@/assets/lesbest-journal-workplace.webp";
-import journalGuestImg from "@/assets/lesbest-journal-guest-ready.webp";
+import coverQuietArtImg from "@/assets/lesbest-journal-cover-quiet-art.webp";
+import coverRainyImg from "@/assets/lesbest-journal-cover-rainy-season.webp";
+import coverWorkplaceImg from "@/assets/lesbest-journal-cover-workplace.webp";
+import coverGuestImg from "@/assets/lesbest-journal-cover-guest-ready.webp";
 import homeCardIndustrialImg from "@/assets/lesbest-home-card-industrial.webp";
 import homeCardHomeImg from "@/assets/lesbest-home-card-home-cleaning.webp";
 import homeCardResidentImg from "@/assets/lesbest-home-card-resident.webp";
 import homeCardFumigationImg from "@/assets/lesbest-home-card-fumigation.webp";
 import homeCardMaintenanceImg from "@/assets/lesbest-home-card-maintenance.webp";
-import cardQuietArtImg from "@/assets/lesbest-journal-card-quiet-art.webp";
-import cardRainyImg from "@/assets/lesbest-journal-card-rainy-season.webp";
-import cardWorkplaceImg from "@/assets/lesbest-journal-card-workplace.webp";
-import cardGuestImg from "@/assets/lesbest-journal-card-guest-ready.webp";
 
 export const photos = {
   servicesHero: { src: servicesHeroImg, alt: "Two Lesbest cleaners polishing the marble floor of a duplex living room with a floor buffer and cleaning trolley" },
@@ -75,10 +72,8 @@ export const articles = [
     slug: "quiet-art-of-property-care", category: "Property Care", date: "18 September 2026",
     title: "The quiet art of exceptional property care",
     excerpt: "Why the finest homes in Uyo are maintained through anticipation, consistency and an eye for what others miss.",
-    image: journalPropertyCareImg,
-    imageAlt: "A double-height duplex living room with polished floors and garden views",
-    cardImage: cardQuietArtImg,
-    cardImageAlt: "A Lesbest cleaner in black gloves polishing a marble table in a warm, softly lit living room",
+    image: coverQuietArtImg,
+    imageAlt: "A Lesbest cleaner in black gloves polishing a marble coffee table in a warm, softly lit living room",
     intro: "The most beautifully maintained properties rarely feel managed. They simply feel composed: surfaces are clear, materials retain their character and every room is ready for the life that happens within it.",
     sections: [
       { heading: "Begin with the character of the space", text: "Exceptional care starts with observation. Natural stone asks for a different approach from timber; fine upholstery needs a different rhythm from a busy entrance. The right standard is never one-size-fits-all." },
@@ -90,10 +85,8 @@ export const articles = [
     slug: "rainy-season-care", category: "Expert Advice", date: "02 September 2026",
     title: "Guarding your property through the rainy season",
     excerpt: "A considered guide to protecting surfaces, fabrics and finishes against Akwa Ibom's humidity and rains.",
-    image: journalRainyImg,
-    imageAlt: "A Lesbest cleaner wiping the floor by sliding doors while rain falls outside",
-    cardImage: cardRainyImg,
-    cardImageAlt: "A Lesbest technician in a cap and black gloves clearing leaves from a roof gutter in the rain",
+    image: coverRainyImg,
+    imageAlt: "A Lesbest technician in a cap and black gloves clearing wet leaves from a roof gutter in the rain",
     intro: "Uyo's rainy season brings months of heavy, persistent rainfall — and with it, humidity that settles into every room, fabric and surface if it isn't managed with intention.",
     sections: [
       { heading: "Moisture finds what you miss", text: "Damp collects quietly in corners, behind furniture and inside cupboards long before it's visible. A considered programme checks these spaces on every visit, not just once a problem has already taken hold." },
@@ -105,10 +98,8 @@ export const articles = [
     slug: "workplace-standard", category: "Business", date: "19 August 2026",
     title: "What a well-kept workplace says before you do",
     excerpt: "The subtle signals that shape a client's first impression.",
-    image: journalWorkplaceImg,
-    imageAlt: "A Lesbest cleaner polishing a marble reception desk in an office lobby",
-    cardImage: cardWorkplaceImg,
-    cardImageAlt: "A Lesbest cleaner wiping a boardroom table in a bright open-plan office",
+    image: coverWorkplaceImg,
+    imageAlt: "A Lesbest cleaner wiping a polished boardroom table in a bright office with a city view",
     intro: "Clients and staff form an impression of a business within seconds of walking in — long before a meeting starts or a pitch is made.",
     sections: [
       { heading: "The details people register without noticing", text: "Clear glass, unmarked floors and a reception area that feels attended to all signal the same thing: a business that takes care seriously, in ways both visible and unspoken." },
@@ -120,10 +111,8 @@ export const articles = [
     slug: "guest-ready-home", category: "Home", date: "05 August 2026",
     title: "The considered way to prepare a home for guests",
     excerpt: "A calm, room-by-room approach to creating an effortless welcome.",
-    image: journalGuestImg,
-    imageAlt: "A Lesbest cleaner finishing a guest bedroom with a white and burnt-orange bed",
-    cardImage: cardGuestImg,
-    cardImageAlt: "A Lesbest cleaner placing a pillow and a welcome tray on a guest bed",
+    image: coverGuestImg,
+    imageAlt: "A Lesbest cleaner placing a pillow and a welcome tray on a guest bed",
     intro: "Preparing a home for guests shouldn't mean a frantic weekend of catching up on everything that's been postponed. It should be a calm, deliberate pass through the spaces that matter most.",
     sections: [
       { heading: "Start with where people gather", text: "Living areas, guest bathrooms and the kitchen carry the most attention during a visit. Beginning there, rather than working room by room in order, makes the biggest difference for the least effort." },
