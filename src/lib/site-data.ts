@@ -21,6 +21,7 @@ import residentImg from "@/assets/lesbest-resident-cleaning-lobby.webp";
 import fumigationImg from "@/assets/lesbest-fumigation-treatment.webp";
 import maintenanceImg from "@/assets/lesbest-maintenance-technician.webp";
 import servicesHeroImg from "@/assets/lesbest-services-hero-team.webp";
+import servicesHeroBedroomImg from "@/assets/lesbest-services-hero-bedroom.webp";
 import aboutHeroImg from "@/assets/lesbest-about-hero-living-room.webp";
 import aboutDetailsImg from "@/assets/lesbest-about-details.webp";
 import aboutTeamImg from "@/assets/lesbest-about-team-at-work.webp";
@@ -40,7 +41,7 @@ import homeCardFumigationImg from "@/assets/lesbest-home-card-fumigation.webp";
 import homeCardMaintenanceImg from "@/assets/lesbest-home-card-maintenance.webp";
 
 export const photos = {
-  servicesHero: { src: servicesHeroImg, alt: "Two Lesbest cleaners polishing the marble floor of a duplex living room with a floor buffer and cleaning trolley" },
+  servicesHero: { src: servicesHeroBedroomImg, alt: "A Lesbest cleaner wiping a bedside table in a luxury master bedroom with louvre windows and palm trees outside" },
   aboutHero: { src: aboutHeroImg, alt: "A wide luxury living room with polished marble floors and a view of palm trees" },
   aboutDetails: { src: aboutDetailsImg, alt: "A stone ledge in a Nigerian home with a tea tray, books and plants beside a garden window" },
   aboutTeam: { src: aboutTeamImg, alt: "Three Lesbest cleaners dusting, vacuuming and restocking a cleaning cart in a living room" },
