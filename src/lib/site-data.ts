@@ -37,6 +37,10 @@ import homeCardHomeImg from "@/assets/lesbest-home-card-home-cleaning.webp";
 import homeCardResidentImg from "@/assets/lesbest-home-card-resident.webp";
 import homeCardFumigationImg from "@/assets/lesbest-home-card-fumigation.webp";
 import homeCardMaintenanceImg from "@/assets/lesbest-home-card-maintenance.webp";
+import cardQuietArtImg from "@/assets/lesbest-journal-card-quiet-art.webp";
+import cardRainyImg from "@/assets/lesbest-journal-card-rainy-season.webp";
+import cardWorkplaceImg from "@/assets/lesbest-journal-card-workplace.webp";
+import cardGuestImg from "@/assets/lesbest-journal-card-guest-ready.webp";
 
 export const photos = {
   servicesHero: { src: servicesHeroImg, alt: "Two Lesbest cleaners polishing the marble floor of a duplex living room with a floor buffer and cleaning trolley" },
@@ -73,6 +77,8 @@ export const articles = [
     excerpt: "Why the finest homes in Uyo are maintained through anticipation, consistency and an eye for what others miss.",
     image: journalPropertyCareImg,
     imageAlt: "A double-height duplex living room with polished floors and garden views",
+    cardImage: cardQuietArtImg,
+    cardImageAlt: "A Lesbest cleaner in black gloves polishing a marble table in a warm, softly lit living room",
     intro: "The most beautifully maintained properties rarely feel managed. They simply feel composed: surfaces are clear, materials retain their character and every room is ready for the life that happens within it.",
     sections: [
       { heading: "Begin with the character of the space", text: "Exceptional care starts with observation. Natural stone asks for a different approach from timber; fine upholstery needs a different rhythm from a busy entrance. The right standard is never one-size-fits-all." },
@@ -86,6 +92,8 @@ export const articles = [
     excerpt: "A considered guide to protecting surfaces, fabrics and finishes against Akwa Ibom's humidity and rains.",
     image: journalRainyImg,
     imageAlt: "A Lesbest cleaner wiping the floor by sliding doors while rain falls outside",
+    cardImage: cardRainyImg,
+    cardImageAlt: "A Lesbest technician in a cap and black gloves clearing leaves from a roof gutter in the rain",
     intro: "Uyo's rainy season brings months of heavy, persistent rainfall — and with it, humidity that settles into every room, fabric and surface if it isn't managed with intention.",
     sections: [
       { heading: "Moisture finds what you miss", text: "Damp collects quietly in corners, behind furniture and inside cupboards long before it's visible. A considered programme checks these spaces on every visit, not just once a problem has already taken hold." },
@@ -99,6 +107,8 @@ export const articles = [
     excerpt: "The subtle signals that shape a client's first impression.",
     image: journalWorkplaceImg,
     imageAlt: "A Lesbest cleaner polishing a marble reception desk in an office lobby",
+    cardImage: cardWorkplaceImg,
+    cardImageAlt: "A Lesbest cleaner wiping a boardroom table in a bright open-plan office",
     intro: "Clients and staff form an impression of a business within seconds of walking in — long before a meeting starts or a pitch is made.",
     sections: [
       { heading: "The details people register without noticing", text: "Clear glass, unmarked floors and a reception area that feels attended to all signal the same thing: a business that takes care seriously, in ways both visible and unspoken." },
@@ -112,6 +122,8 @@ export const articles = [
     excerpt: "A calm, room-by-room approach to creating an effortless welcome.",
     image: journalGuestImg,
     imageAlt: "A Lesbest cleaner finishing a guest bedroom with a white and burnt-orange bed",
+    cardImage: cardGuestImg,
+    cardImageAlt: "A Lesbest cleaner placing a pillow and a welcome tray on a guest bed",
     intro: "Preparing a home for guests shouldn't mean a frantic weekend of catching up on everything that's been postponed. It should be a calm, deliberate pass through the spaces that matter most.",
     sections: [
       { heading: "Start with where people gather", text: "Living areas, guest bathrooms and the kitchen carry the most attention during a visit. Beginning there, rather than working room by room in order, makes the biggest difference for the least effort." },
