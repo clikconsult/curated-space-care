@@ -1005,7 +1005,7 @@ Ensure every page feels like it belongs to the same premium brand.
 
 This project was built with [Lovable](https://lovable.dev).
 
-**Live app**: https://curated-space-care.lovable.app
+**Live app**: https://lesbest.com.ng
 
 ## Build with Lovable
 

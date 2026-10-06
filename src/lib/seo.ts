@@ -1,7 +1,7 @@
 // Social-sharing metadata (Open Graph + X/Twitter cards) for every page.
 // SITE_URL must be the public origin with no trailing slash. Update it when a
 // custom domain goes live, because share crawlers need absolute URLs.
-export const SITE_URL = "https://curated-space-care.lovable.app";
+export const SITE_URL = "https://lesbest.com.ng";
 export const SITE_NAME = "LESBEST";
 
 const ogUrl = (name: string) => `${SITE_URL}/og/${name}.jpg`;
