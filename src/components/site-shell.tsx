@@ -48,12 +48,12 @@ export function SiteShell({ children }: { children: ReactNode }) {
     <ChatWidget />
     <footer className="bg-primary px-5 py-16 text-primary-foreground md:px-10 md:py-24">
       <div className="mx-auto grid max-w-[1500px] gap-12 md:grid-cols-12">
-        <div className="md:col-span-5"><Mark light /><p className="mt-6 max-w-sm text-sm leading-7 text-primary-foreground/70">Meticulous cleaning and property care for Nigeria's finest homes, workplaces and spaces that demand exceptional standards.</p></div>
+        <div className="md:col-span-5"><Mark light /><p className="mt-6 max-w-sm text-sm leading-7 text-primary-foreground/70">Professional cleaning, fumigation and property upkeep for homes, offices and commercial spaces in Uyo, Eket and nearby areas.</p></div>
         <div className="md:col-span-2"><FooterTitle>Navigate</FooterTitle>{links.map(([label,to]) => <Link key={to} to={to} className="mb-3 block text-sm text-primary-foreground/70 hover:text-accent">{label}</Link>)}</div>
         <div className="md:col-span-2"><FooterTitle>Services</FooterTitle>{services.map(x => <Link key={x.slug} to="/services/$serviceSlug" params={{ serviceSlug: x.slug }} className="mb-3 block text-sm text-primary-foreground/70 hover:text-accent">{x.name}</Link>)}</div>
-        <div className="md:col-span-3"><FooterTitle>Contact</FooterTitle><p className="text-sm leading-7 text-primary-foreground/70">{CONTACT.phoneDisplay}<br/>{CONTACT.email}<br/>Uyo · Akwa Ibom · Calabar · Port Harcourt</p></div>
+        <div className="md:col-span-3"><FooterTitle>Contact</FooterTitle><p className="text-sm leading-7 text-primary-foreground/70"><a href={`tel:${CONTACT.phoneNumber}`} className="hover:text-accent">Call: {CONTACT.phoneDisplay}</a><br/><a href={`https://wa.me/${CONTACT.whatsappNumber}`} target="_blank" rel="noreferrer" className="hover:text-accent">WhatsApp: {CONTACT.whatsappDisplay}</a><br/><a href={`mailto:${CONTACT.email}`} className="hover:text-accent">{CONTACT.email}</a><br/>Uyo, Eket, Akwa Ibom and environs</p></div>
       </div>
-      <div className="mx-auto mt-16 flex max-w-[1500px] flex-col gap-5 border-t border-primary-foreground/20 pt-8 md:flex-row md:items-end md:justify-between"><p className="font-display text-4xl md:text-6xl">A higher standard of clean.</p><p className="text-[10px] uppercase tracking-[0.15em] text-primary-foreground/50">© 2026 LESBEST</p></div>
+      <div className="mx-auto mt-16 flex max-w-[1500px] flex-col gap-5 border-t border-primary-foreground/20 pt-8 md:flex-row md:items-end md:justify-between"><p className="font-display text-4xl md:text-6xl">Clean spaces. Properly cared for.</p><p className="text-[10px] uppercase tracking-[0.15em] text-primary-foreground/50">© 2026 LESBEST</p></div>
     </footer>
   </div>;
 }

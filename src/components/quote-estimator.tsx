@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { Check, Clipboard, Minus, Plus, RotateCcw } from "lucide-react";
 import { useMemo, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Eyebrow } from "@/components/editorial";
@@ -14,6 +15,36 @@ import {
 import { services } from "@/lib/site-data";
 
 type Option = { slug: string; label: string; note?: string };
+
+const quickStarts = [
+  {
+    label: "Apartment reset",
+    note: "A thorough one-off clean",
+    propertySlug: "apartment",
+    serviceSlug: "deep-cleaning",
+    sqm: 90,
+    frequencySlug: "one-off",
+    addOnSlugs: ["cupboards"],
+  },
+  {
+    label: "Home routine",
+    note: "A fortnightly care plan",
+    propertySlug: "residence",
+    serviceSlug: "home",
+    sqm: 180,
+    frequencySlug: "fortnightly",
+    addOnSlugs: [],
+  },
+  {
+    label: "Guest-ready",
+    note: "For a short-let turnover",
+    propertySlug: "shortlet",
+    serviceSlug: "deep-cleaning",
+    sqm: 110,
+    frequencySlug: "weekly",
+    addOnSlugs: ["presentation"],
+  },
+] as const;
 
 function OptionList({
   legend,
@@ -82,6 +113,7 @@ export function QuoteEstimator({
   const [sqm, setSqm] = useState<number>(SIZE.initial);
   const [frequencySlug, setFrequencySlug] = useState<string>("fortnightly");
   const [addOnSlugs, setAddOnSlugs] = useState<string[]>([]);
+  const [copied, setCopied] = useState(false);
 
   const estimate = useMemo(
     () => buildEstimate({ propertySlug, serviceSlug, sqm, frequencySlug, addOnSlugs }),
@@ -89,6 +121,47 @@ export function QuoteEstimator({
   );
 
   const input = { propertySlug, serviceSlug, sqm, frequencySlug, addOnSlugs };
+
+  function applyQuickStart(preset: (typeof quickStarts)[number]) {
+    setPropertySlug(preset.propertySlug);
+    setServiceSlug(preset.serviceSlug);
+    setSqm(preset.sqm);
+    setFrequencySlug(preset.frequencySlug);
+    setAddOnSlugs([...preset.addOnSlugs]);
+  }
+
+  function resetEstimate() {
+    setPropertySlug("residence");
+    setServiceSlug("deep-cleaning");
+    setSqm(SIZE.initial);
+    setFrequencySlug("fortnightly");
+    setAddOnSlugs([]);
+    setCopied(false);
+  }
+
+  async function copyEstimate() {
+    const range = estimate.recurring
+      ? `${formatNaira(estimate.monthlyLow)} – ${formatNaira(estimate.monthlyHigh)} per month`
+      : `${formatNaira(estimate.visitLow)} – ${formatNaira(estimate.visitHigh)} for the visit`;
+    const extras = addOns.filter((extra) => addOnSlugs.includes(extra.slug)).map((extra) => extra.label);
+    const summary = [
+      "LESBEST indicative estimate",
+      `Property: ${estimate.propertyLabel}`,
+      `Service: ${estimate.serviceLabel}`,
+      `Size: ${sqm} m²`,
+      `Frequency: ${estimate.frequencyLabel}`,
+      `Extras: ${extras.length ? extras.join(", ") : "None"}`,
+      `Range: ${range}`,
+    ].join("\n");
+
+    try {
+      await navigator.clipboard.writeText(summary);
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 2400);
+    } catch {
+      setCopied(false);
+    }
+  }
 
   function toggleAddOn(slug: string) {
     setAddOnSlugs((current) =>
@@ -99,6 +172,34 @@ export function QuoteEstimator({
   return (
     <div className="grid gap-14 md:grid-cols-12 md:gap-10">
       <div className="space-y-14 md:col-span-7">
+        <div>
+          <div className="mb-5 flex items-center justify-between gap-4">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-secondary">
+              Start with a scenario
+            </p>
+            <button
+              type="button"
+              onClick={resetEstimate}
+              className="inline-flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-muted-foreground transition-colors hover:text-primary"
+            >
+              <RotateCcw className="size-3" /> Reset
+            </button>
+          </div>
+          <div className="grid gap-3 sm:grid-cols-3">
+            {quickStarts.map((preset) => (
+              <button
+                key={preset.label}
+                type="button"
+                onClick={() => applyQuickStart(preset)}
+                className="group border border-border p-4 text-left transition-colors hover:border-secondary hover:bg-secondary/5"
+              >
+                <span className="block font-display text-xl leading-none text-primary">{preset.label}</span>
+                <span className="mt-2 block text-[11px] leading-5 text-muted-foreground">{preset.note}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+
         <OptionList
           legend="01 / The property"
           options={propertyTypes}
@@ -124,9 +225,26 @@ export function QuoteEstimator({
                 square metres
               </span>
             </p>
-            <p className="text-[11px] font-medium leading-5 text-foreground/65">
-              Roughly {sqm < 90 ? "one bedroom" : `${Math.max(1, Math.round(sqm / 60))} bedrooms`}
-            </p>
+            <div className="flex items-center gap-2">
+              <button
+                type="button"
+                aria-label="Reduce floor area"
+                onClick={() => setSqm((current) => Math.max(SIZE.min, current - SIZE.step))}
+                disabled={sqm <= SIZE.min}
+                className="grid size-8 place-items-center border border-border text-muted-foreground transition-colors hover:border-secondary hover:text-primary disabled:cursor-not-allowed disabled:opacity-35"
+              >
+                <Minus className="size-3.5" />
+              </button>
+              <button
+                type="button"
+                aria-label="Increase floor area"
+                onClick={() => setSqm((current) => Math.min(SIZE.max, current + SIZE.step))}
+                disabled={sqm >= SIZE.max}
+                className="grid size-8 place-items-center border border-border text-muted-foreground transition-colors hover:border-secondary hover:text-primary disabled:cursor-not-allowed disabled:opacity-35"
+              >
+                <Plus className="size-3.5" />
+              </button>
+            </div>
           </div>
           <input
             type="range"
@@ -202,6 +320,12 @@ export function QuoteEstimator({
             {estimate.recurring ? "per month" : "for the visit"}
           </p>
 
+          {estimate.recurring && (
+            <p className="mt-4 border-l-2 border-secondary pl-3 text-xs leading-5 text-muted-foreground">
+              Based on {estimate.visitsPerMonth} visits each month — about {formatNaira(estimate.visitLow)} to {formatNaira(estimate.visitHigh)} per visit.
+            </p>
+          )}
+
           <dl className="mt-9 border-t border-border pt-5 text-sm leading-7">
             {[
               ["Property", estimate.propertyLabel],
@@ -226,6 +350,14 @@ export function QuoteEstimator({
             <Button asChild variant="outline" className="w-full">
               <Link to="/contact">Request a firm quote</Link>
             </Button>
+            <button
+              type="button"
+              onClick={copyEstimate}
+              className="flex min-h-10 items-center justify-center gap-2 text-xs font-semibold text-muted-foreground transition-colors hover:text-primary"
+            >
+              {copied ? <Check className="size-3.5 text-secondary" /> : <Clipboard className="size-3.5" />}
+              {copied ? "Estimate copied" : "Copy estimate details"}
+            </button>
           </div>
 
           <p className="mt-6 text-[11px] leading-6 text-muted-foreground">

@@ -3,6 +3,6 @@ import { HomePage } from "@/components/pages";
 import { seo } from "@/lib/seo";
 
 export const Route = createFileRoute("/")({
-  head: () => seo({ title: "LESBEST — A Higher Standard of Clean", description: "Premium cleaning and property-care services for exceptional homes, workplaces and hospitality spaces.", ogDescription: "Meticulous property care for spaces that demand exceptional standards.", path: "/", image: "home", imageAlt: "Three uniformed Lesbest cleaners with floor-care equipment in a luxury living room" }),
+  head: () => seo({ title: "Cleaning Services in Uyo & Eket | LESBEST", description: "Professional home, office, commercial and deep cleaning services in Uyo, Eket, Akwa Ibom and surrounding areas.", ogDescription: "Professional cleaning and property care for homes and businesses in Akwa Ibom.", path: "/", image: "home", imageAlt: "Three uniformed Lesbest cleaners with floor-care equipment in a living room" }),
   component: HomePage,
 });

@@ -80,7 +80,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "LESBEST — Premium Property Care in Nigeria" },
-      { name: "description", content: "Meticulous cleaning and property care for exceptional spaces." },
+      { name: "description", content: "Professional cleaning and property care for homes and businesses in Uyo, Eket and Akwa Ibom." },
       { name: "author", content: "LESBEST" },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "LESBEST" },

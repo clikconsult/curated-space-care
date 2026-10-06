@@ -17,7 +17,7 @@ const catalogue = services
   .join("\n");
 const frequencyOptions = frequencies.map((f) => f.label).join(", ");
 
-const systemPrompt = `You are the client advisor for LESBEST, a premium cleaning and property-care company in Uyo, Akwa Ibom State, Nigeria, serving private homes, estates, offices, industrial facilities and short-let apartments across Akwa Ibom, Calabar and Port Harcourt.
+const systemPrompt = `You are the client advisor for LESBEST, a professional cleaning and property-care company serving private homes, estates, offices, industrial facilities and short-let apartments in Uyo, Eket, Akwa Ibom and surrounding areas.
 
 A prospective client describes their property and what it needs. Do four things:
 1. Pick between one and three services, using slugs copied exactly from this catalogue:

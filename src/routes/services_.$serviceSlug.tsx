@@ -4,7 +4,7 @@ import { SITE_NAME, SITE_URL, seo } from "@/lib/seo";
 import { services } from "@/lib/site-data";
 import { serviceContent } from "@/lib/service-content";
 
-const AREAS = ["Uyo", "Akwa Ibom State", "Calabar", "Port Harcourt"];
+const AREAS = ["Uyo", "Eket", "Akwa Ibom", "surrounding areas"];
 
 export const Route = createFileRoute("/services_/$serviceSlug")({
   loader: ({ params }) => {

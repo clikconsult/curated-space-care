@@ -17,7 +17,7 @@ export type AssistantAction =
 export type AssistantReply = { message: string; suggestions: string[]; actions: AssistantAction[] };
 export type ChatTurn = { role: "user" | "assistant"; content: string };
 
-export const AREAS = ["Uyo", "Akwa Ibom State", "Calabar", "Port Harcourt"] as const;
+export const AREAS = ["Uyo", "Eket", "Akwa Ibom", "surrounding areas"] as const;
 export const LIMITS = { turns: 12, userChars: 500, assistantChars: 900, bodyBytes: 16_000, suggestions: 3, actions: 3 } as const;
 const PAGES: readonly AssistantPage[] = ["/services", "/portfolio", "/blog", "/about", "/contact"];
 
@@ -28,7 +28,7 @@ export function whatsappLink(contact: ContactInfo, text: string) {
 export function welcomeReply(): AssistantReply {
   return {
     message: "Hi, I'm the LESBEST assistant. I can explain our services, point you to an instant estimate and help you reach the team. What can I help with?",
-    suggestions: ["What services do you offer?", "Get an estimate", "Do you cover Port Harcourt?"],
+    suggestions: ["What services do you offer?", "Get an estimate", "Do you cover Eket?"],
     actions: [],
   };
 }
@@ -226,12 +226,12 @@ export function localReply(text: string, history: ChatTurn[], ctx: AssistantCont
     };
   }
 
-  if (has(t, ["where", "area", "location", " city", " cover", " serve", "uyo", "calabar", "port harcourt", "akwa ibom", "lagos", "abuja", "enugu", "delivery", "travel"])) {
+  if (has(t, ["where", "area", "location", " city", " cover", " serve", "uyo", "eket", "akwa ibom", "lagos", "abuja", "enugu", "delivery", "travel"])) {
     const outside = has(t, ["lagos", "abuja", "enugu", "ibadan", "kano", "benin", "owerri", "asaba"]);
     return {
       message: outside
         ? `Our listed coverage is ${AREAS.join(", ")}. I'm not able to confirm service elsewhere, so message the team and they'll tell you what's possible.`
-        : `We serve Uyo and Akwa Ibom State, with service also available in Calabar and Port Harcourt. If you're somewhere else, message the team and they'll tell you what's possible.`,
+        : `We serve Uyo, Eket, Akwa Ibom and surrounding areas. If you're nearby, message the team with your location and they will confirm availability.`,
       suggestions: ["What services do you offer?", "Get an estimate"],
       actions: [wa, { type: "page", to: "/services", label: "See services" }],
     };

@@ -30,7 +30,7 @@ const slides = [
     image: bathroom, position: "50% 43%", alt: "A Lesbest cleaner polishing the floor of a luxury bathroom",
     eyebrow: "Premium property care · Uyo, Akwa Ibom",
     line: "A higher standard", accent: "of clean.",
-    body: "Meticulous cleaning and property-care services for homes, businesses and spaces that demand exceptional standards.",
+    body: "Professional cleaning, fumigation and property care for homes, offices and commercial spaces in Uyo, Eket and nearby areas.",
     primary: { label: "Request a quote", to: "/contact" }, secondary: { label: "Explore services", to: "/services" },
   },
   {

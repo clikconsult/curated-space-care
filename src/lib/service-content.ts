@@ -11,7 +11,7 @@ export type ServiceContent = {
   faqs: { q: string; a: string }[];
 };
 
-const areas = "We serve Uyo and Akwa Ibom State, with service also available in Calabar and Port Harcourt.";
+const areas = "We serve Uyo, Eket, Akwa Ibom and surrounding areas.";
 const pricing = "It depends on the size of the property, its condition, the frequency of visits and access. Use the instant estimate for an indicative range, and we confirm the details after understanding your space.";
 
 export const serviceContent: Record<string, ServiceContent> = {

@@ -14,7 +14,7 @@ export const Route = createFileRoute("/quote")({
     seo({
       title: "Instant Estimate — LESBEST Property Care",
       description:
-        "Build an indicative estimate for premium cleaning and property care in Uyo, Akwa Ibom, Calabar and Port Harcourt, then send it straight to the team.",
+        "Build an indicative estimate for cleaning and property care in Uyo, Eket, Akwa Ibom and surrounding areas, then send it straight to the team.",
       ogDescription: "Set the property, service and rhythm. See an indicative range, then send it to us.",
       path: "/quote",
       image: "quote",
