@@ -84,7 +84,7 @@ export async function recommendBrief(input: AdviceBrief): Promise<AdviceRecommen
       }
     }
 
-    const bySlug = new Map(services.map((s) => [s.slug, s]));
+    const bySlug = new Map<string, (typeof services)[number]>(services.map((s) => [s.slug, s]));
     const recommended = [...new Set(parsed.services)]
       .map((slug) => bySlug.get(slug))
       .filter((s): s is (typeof services)[number] => Boolean(s))
