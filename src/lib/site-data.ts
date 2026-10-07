@@ -58,7 +58,15 @@ export const CONTACT = {
   whatsappNumber: "2348162573736",
   whatsappDisplay: "08162573736",
   email: "contact@lesbest.com.ng",
+  address: "No. 40 Ekpo Obot Street, off Brooks Street (by Oliver Twist), Uyo, Akwa Ibom State",
+  // What Google Maps searches for. If the pin lands in the wrong place, paste a more exact query here.
+  mapsQuery: "40 Ekpo Obot Street, off Brooks Street, Uyo, Akwa Ibom, Nigeria",
 };
+
+const mapsQ = encodeURIComponent(CONTACT.mapsQuery);
+export const mapsSearchUrl = `https://www.google.com/maps/search/?api=1&query=${mapsQ}`;
+export const mapsDirectionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${mapsQ}`;
+export const mapsEmbedUrl = `https://www.google.com/maps?q=${mapsQ}&output=embed`;
 
 export function whatsappEnquiry(service?: string) {
   const message = service
