@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowRight, ArrowLeftRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { images, photos, whatsappEnquiry } from "@/lib/site-data";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import beforeLivingroom from "@/assets/lesbest-before-livingroom.webp";
 import afterLivingroom from "@/assets/lesbest-after-livingroom.webp";
 
@@ -19,9 +19,41 @@ export function QuoteBand({ image = photos.closingLiving.src, alt = "Refined int
 export function BeforeAfter() {
   const [value, setValue] = useState(58);
   const [touched, setTouched] = useState(false);
-  const dismiss = () => setTouched(true);
+  const wrapRef = useRef<HTMLDivElement>(null);
+  const stopped = useRef(false);
+  const dismiss = () => { stopped.current = true; setTouched(true); };
+
+  // One squeegee-style sweep (58 -> 14 -> 86 -> 58) the first time the slider is mostly on screen.
+  useEffect(() => {
+    const el = wrapRef.current;
+    if (!el || typeof IntersectionObserver === "undefined" || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    let raf = 0;
+    const io = new IntersectionObserver(([entry]) => {
+      if (!entry?.isIntersecting) return;
+      io.disconnect();
+      const path = [58, 14, 86, 58];
+      const t0 = performance.now();
+      const duration = 2800;
+      const step = (now: number) => {
+        if (stopped.current) return;
+        const p = Math.min(1, (now - t0) / duration);
+        const pos = p * (path.length - 1);
+        const seg = Math.min(path.length - 2, Math.floor(pos));
+        const t = pos - seg;
+        const eased = t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+        const a = path[seg] ?? 58;
+        const b = path[seg + 1] ?? 58;
+        setValue(a + (b - a) * eased);
+        if (p < 1) raf = requestAnimationFrame(step);
+      };
+      raf = requestAnimationFrame(step);
+    }, { threshold: 0.6 });
+    io.observe(el);
+    return () => { io.disconnect(); cancelAnimationFrame(raf); };
+  }, []);
+
   return (
-    <div className="relative aspect-[4/3] overflow-hidden bg-muted select-none md:aspect-[16/9]">
+    <div ref={wrapRef} className="relative aspect-[4/3] overflow-hidden bg-muted select-none md:aspect-[16/9]">
       <img src={beforeLivingroom} alt="A newly built living room and kitchen before Lesbest's post-construction clean, with a dust-covered floor" loading="lazy" className="absolute inset-0 h-full w-full object-cover object-[center_35%]" width={1200} height={896} />
       <div className="absolute inset-y-0 left-0 overflow-hidden" style={{ width: `${value}%` }}>
         <img src={afterLivingroom} alt="The same living room and kitchen after Lesbest's post-construction clean, with the floor polished to a mirror finish" loading="lazy" className="h-full max-w-none object-cover object-[center_35%]" style={{ width: "calc(100vw - 40px)", maxWidth: "1500px" }} width={1200} height={896} />
@@ -46,7 +78,7 @@ export function BeforeAfter() {
 
       <input
         aria-label="Compare before and after"
-        type="range" min="5" max="95" value={value}
+        type="range" min="5" max="95" value={Math.round(value)}
         onChange={(e) => setValue(Number(e.target.value))}
         onPointerDown={dismiss} onTouchStart={dismiss} onKeyDown={dismiss}
         className="absolute inset-0 h-full w-full cursor-ew-resize opacity-0"

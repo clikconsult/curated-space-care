@@ -6,6 +6,7 @@ import { CONTACT, services } from "@/lib/site-data";
 import lesbestMark from "@/assets/lesbest-mark.png";
 import { LiquidLogo } from "@/components/effects/liquid-logo";
 import { ChatWidget } from "@/components/chat-widget";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const links = [
   ["Home", "/"], ["Services", "/services"], ["About", "/about"],
@@ -31,6 +32,7 @@ function HeaderMark() {
 
 export function SiteShell({ children }: { children: ReactNode }) {
   const [open, setOpen] = useState(false);
+  useScrollReveal();
   useEffect(() => { setOpen(false); }, []);
   return <div className="min-h-screen bg-background">
     <header className="sticky top-0 z-50 border-b border-border/70 bg-background/95 backdrop-blur-sm">

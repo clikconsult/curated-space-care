@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { AnimatedNaira } from "@/components/animated-naira";
 import { Check, Clipboard, Minus, Plus, RotateCcw } from "lucide-react";
 import { useMemo, useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -308,13 +309,9 @@ export function QuoteEstimator({
         <div className="border-t border-primary pt-6 md:sticky md:top-28">
           <Eyebrow>Indicative investment</Eyebrow>
           <p aria-live="polite" className="font-display text-5xl leading-[0.95] md:text-6xl">
-            {estimate.recurring
-              ? `${formatNaira(estimate.monthlyLow)}`
-              : `${formatNaira(estimate.visitLow)}`}
+            <AnimatedNaira value={estimate.recurring ? estimate.monthlyLow : estimate.visitLow} />
             <span className="text-secondary"> — </span>
-            {estimate.recurring
-              ? `${formatNaira(estimate.monthlyHigh)}`
-              : `${formatNaira(estimate.visitHigh)}`}
+            <AnimatedNaira value={estimate.recurring ? estimate.monthlyHigh : estimate.visitHigh} />
           </p>
           <p className="mt-3 text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
             {estimate.recurring ? "per month" : "for the visit"}

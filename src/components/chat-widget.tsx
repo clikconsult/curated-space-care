@@ -144,7 +144,7 @@ function ChatWidgetInner() {
 
           <div ref={listRef} role="log" aria-live="polite" className="flex-1 space-y-3 overflow-y-auto p-4">
             {messages.map((m) => (
-              <div key={m.id} className={m.from === "user" ? "flex justify-end" : "flex justify-start"}>
+              <div key={m.id} className={`chat-in ${m.from === "user" ? "flex justify-end" : "flex justify-start"}`}>
                 <div className="max-w-[88%]">
                   <div className={`whitespace-pre-line rounded-lg px-3 py-2 text-sm leading-snug ${m.from === "bot" ? "border border-border bg-card text-card-foreground" : "bg-secondary text-secondary-foreground"}`}>{m.text}</div>
                   {m.from === "bot" && m.actions && m.actions.length > 0 && <div className="mt-2 flex flex-wrap gap-2">{m.actions.map(renderAction)}</div>}
@@ -154,13 +154,13 @@ function ChatWidgetInner() {
             {loading && (
               <div className="flex justify-start" aria-label="The assistant is typing">
                 <div className="flex gap-1 rounded-lg border border-border bg-card px-3 py-3">
-                  {[0, 1, 2].map((d) => <span key={d} className="size-1.5 animate-pulse rounded-full bg-muted-foreground" style={{ animationDelay: `${d * 150}ms` }} />)}
+                  {[0, 1, 2].map((d) => <span key={d} className="typing-dot size-1.5 rounded-full bg-muted-foreground" style={{ animationDelay: `${d * 150}ms` }} />)}
                 </div>
               </div>
             )}
             {!loading && last?.from === "bot" && last.suggestions && last.suggestions.length > 0 && (
               <div className="flex flex-wrap gap-2 pt-1">
-                {last.suggestions.map((s) => <button key={s} type="button" onClick={() => void ask(s)} className={`${pill} bg-transparent`}>{s}</button>)}
+                {last.suggestions.map((s, k) => <button key={s} type="button" onClick={() => void ask(s)} style={{ "--d": `${k * 70}ms` } as React.CSSProperties} className={`chat-in ${pill} bg-transparent`}>{s}</button>)}
               </div>
             )}
           </div>
@@ -187,7 +187,7 @@ function ChatWidgetInner() {
         onClick={() => setOpen((o) => !o)}
         aria-expanded={open}
         aria-label={open ? "Close chat assistant" : "Open chat assistant"}
-        className="flex h-14 w-14 items-center justify-center rounded-full bg-secondary text-secondary-foreground shadow-[inset_0_1px_0_rgba(255,255,255,.35),0_10px_30px_rgba(46,30,29,.35)] ring-1 ring-white/30 transition-transform hover:scale-105 active:scale-95"
+        className={`${open ? "" : "launcher-pulse"} flex h-14 w-14 items-center justify-center rounded-full bg-secondary text-secondary-foreground shadow-[inset_0_1px_0_rgba(255,255,255,.35),0_10px_30px_rgba(46,30,29,.35)] ring-1 ring-white/30 transition-transform hover:scale-105 active:scale-95`}
       >
         {open ? <X size={22} /> : <MessageCircle size={22} />}
       </button>

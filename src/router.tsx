@@ -10,6 +10,8 @@ export const getRouter = () => {
     context: { queryClient },
     scrollRestoration: true,
     defaultPreloadStaleTime: 0,
+    // Soft cross-fade on real page changes only (not search-param or hash updates).
+    defaultViewTransition: { types: ({ pathChanged }) => (pathChanged ? ["page"] : false) },
   });
 
   return router;

@@ -164,3 +164,51 @@
 .estimate-slider::-webkit-slider-thumb:hover { transform: scale(1.15); }
 .estimate-slider::-moz-range-thumb { height: 18px; width: 18px; border-radius: 9999px; background: var(--color-primary); border: 2px solid var(--color-secondary); }
 .estimate-slider:focus-visible { outline: 2px solid var(--color-secondary); outline-offset: 8px; }
+
+
+/* ---- Motion (gated) ----
+   Nothing is hidden unless JS adds .motion-ok to <html>, and JS only does that when the visitor
+   has not asked for reduced motion. Server HTML and no-JS visitors always see full content. */
+.motion-ok [data-reveal] { transition: opacity .8s cubic-bezier(.2,.7,.2,1) var(--d,0ms), transform .8s cubic-bezier(.2,.7,.2,1) var(--d,0ms), clip-path 1.1s cubic-bezier(.65,0,.15,1) var(--d,0ms); }
+.motion-ok [data-reveal="up"]:not([data-in]) { opacity: 0; transform: translateY(26px); }
+.motion-ok [data-reveal="wipe"]:not([data-in]) { clip-path: inset(-6px 100% -6px -6px); }
+.motion-ok [data-reveal="wipe"][data-in] { clip-path: inset(-6px); }
+.motion-ok [data-reveal="line-x"] { transform-origin: left; transition: transform 1.6s cubic-bezier(.65,0,.15,1) var(--d,0ms); }
+.motion-ok [data-reveal="line-y"] { transform-origin: top; transition: transform 1.6s cubic-bezier(.65,0,.15,1) var(--d,0ms); }
+.motion-ok [data-reveal="line-x"]:not([data-in]) { transform: scaleX(0); }
+.motion-ok [data-reveal="line-y"]:not([data-in]) { transform: scaleY(0); }
+
+/* Light sweep across the italic accent words in headings (one pass every ~9s, otherwise at rest) */
+.motion-ok :is(h1, h2, h3) em.text-secondary {
+  background-image: linear-gradient(100deg, var(--color-secondary) 38%, color-mix(in oklab, var(--color-secondary) 30%, white) 50%, var(--color-secondary) 62%);
+  background-size: 260% 100%;
+  background-position: 100% 0;
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gleam 9s ease-in-out 1.5s infinite;
+}
+@keyframes gleam { 0% { background-position: 100% 0; } 22%, 100% { background-position: 0% 0; } }
+
+/* Sheen that crosses an image on hover */
+.gleam-hover { position: relative; }
+.gleam-hover::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(105deg, transparent 38%, rgb(255 255 255 / .2) 50%, transparent 62%); transform: translateX(-130%); }
+.group:hover .gleam-hover::after, .gleam-hover:hover::after { transform: translateX(130%); transition: transform 1s ease; }
+
+/* Chat widget */
+@keyframes chat-rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.chat-in { animation: chat-rise .32s cubic-bezier(.2,.7,.2,1) both; animation-delay: var(--d, 0ms); }
+@keyframes typing-dot { 0%, 60%, 100% { transform: translateY(0); opacity: .4; } 30% { transform: translateY(-4px); opacity: 1; } }
+.typing-dot { animation: typing-dot 1.1s ease-in-out infinite; }
+@keyframes launcher-ring { 0% { box-shadow: 0 0 0 0 color-mix(in oklab, var(--color-secondary) 55%, transparent); } 70%, 100% { box-shadow: 0 0 0 18px transparent; } }
+.launcher-pulse { position: relative; }
+.launcher-pulse::after { content: ""; position: absolute; inset: 0; border-radius: 9999px; pointer-events: none; animation: launcher-ring 2.4s ease-out 4s 3; }
+
+/* Soft cross-fade between pages (View Transitions API; browsers without it just navigate) */
+::view-transition-group(root) { animation-duration: .3s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .launcher-pulse::after, .typing-dot, .chat-in { animation: none; }
+  ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none !important; }
+}

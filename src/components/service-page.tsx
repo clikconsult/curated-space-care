@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { stagger } from "@/lib/motion";
 import { Check, Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ArrowLink, Eyebrow, QuoteBand, SectionTitle } from "@/components/editorial";
@@ -62,7 +63,7 @@ export function ServiceDetailPage({ slug }: { slug: string }) {
           <div className="md:col-span-4"><Eyebrow>Who it is for</Eyebrow><h2 className="text-4xl leading-tight md:text-5xl">Built for</h2></div>
           <div className="md:col-span-7 md:col-start-6">
             <p className="text-lg leading-9 text-muted-foreground">{s.suitable}.</p>
-            <ul className="mt-8 grid gap-3 sm:grid-cols-2">{c.idealFor.map((x) => <li key={x} className="border border-border px-5 py-4 text-sm">{x}</li>)}</ul>
+            <ul className="mt-8 grid gap-3 sm:grid-cols-2">{c.idealFor.map((x, j) => <li key={x} data-reveal="up" style={stagger(j, 70)} className="border border-border px-5 py-4 text-sm">{x}</li>)}</ul>
           </div>
         </div>
       </section>
@@ -70,15 +71,15 @@ export function ServiceDetailPage({ slug }: { slug: string }) {
       <section className={`bg-primary text-primary-foreground ${section}`}>
         <div className={wrap}>
           <div className="mb-12 max-w-2xl"><p className="mb-5 text-[10px] font-semibold uppercase tracking-[0.18em] text-accent">How it works</p><h2 className="text-4xl leading-tight md:text-6xl">From first message to finished space</h2></div>
-          <ol className="grid gap-px bg-primary-foreground/20 md:grid-cols-4">
+          <div className="relative"><span aria-hidden="true" data-reveal="line-x" className="pointer-events-none absolute inset-x-0 top-0 z-10 hidden h-0.5 bg-accent md:block" /><span aria-hidden="true" data-reveal="line-y" className="pointer-events-none absolute inset-y-0 left-0 z-10 w-0.5 bg-accent md:hidden" /><ol className="grid gap-px bg-primary-foreground/20 md:grid-cols-4">
             {c.steps.map((st, i) => (
-              <li key={st.title} className="bg-primary p-7 md:p-8">
+              <li key={st.title} data-reveal="up" style={stagger(i, 130, 300)} className="bg-primary p-7 md:p-8">
                 <p className="font-display text-5xl text-accent">0{i + 1}</p>
                 <h3 className="mt-6 text-2xl">{st.title}</h3>
                 <p className="mt-3 text-sm leading-7 text-primary-foreground/70">{st.text}</p>
               </li>
             ))}
-          </ol>
+          </ol></div>
         </div>
       </section>
 
