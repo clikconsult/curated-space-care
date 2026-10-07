@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState, type ReactNode } from "react";
 import { Button } from "@/components/ui/button";
-import { CONTACT, services } from "@/lib/site-data";
+import { CONTACT, mapsSearchUrl, services } from "@/lib/site-data";
 import lesbestMark from "@/assets/lesbest-mark.png";
 import { LiquidLogo } from "@/components/effects/liquid-logo";
 import { ChatWidget } from "@/components/chat-widget";
@@ -53,7 +53,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
         <div className="md:col-span-5"><Mark light /><p className="mt-6 max-w-sm text-sm leading-7 text-primary-foreground/70">Professional cleaning, fumigation and property upkeep for homes, offices and commercial spaces in Uyo, Eket and nearby areas.</p></div>
         <div className="md:col-span-2"><FooterTitle>Navigate</FooterTitle>{links.map(([label,to]) => <Link key={to} to={to} className="mb-3 block text-sm text-primary-foreground/70 hover:text-accent">{label}</Link>)}</div>
         <div className="md:col-span-2"><FooterTitle>Services</FooterTitle>{services.map(x => <Link key={x.slug} to="/services/$serviceSlug" params={{ serviceSlug: x.slug }} className="mb-3 block text-sm text-primary-foreground/70 hover:text-accent">{x.name}</Link>)}</div>
-        <div className="md:col-span-3"><FooterTitle>Contact</FooterTitle><p className="text-sm leading-7 text-primary-foreground/70"><a href={`tel:${CONTACT.phoneNumber}`} className="hover:text-accent">Call: {CONTACT.phoneDisplay}</a><br/><a href={`https://wa.me/${CONTACT.whatsappNumber}`} target="_blank" rel="noreferrer" className="hover:text-accent">WhatsApp: {CONTACT.whatsappDisplay}</a><br/><a href={`mailto:${CONTACT.email}`} className="hover:text-accent">{CONTACT.email}</a><br/>Uyo, Eket, Akwa Ibom and environs</p></div>
+        <div className="md:col-span-3"><FooterTitle>Contact</FooterTitle><p className="text-sm leading-7 text-primary-foreground/70"><a href={`tel:${CONTACT.phoneNumber}`} className="hover:text-accent">Call: {CONTACT.phoneDisplay}</a><br/><a href={`https://wa.me/${CONTACT.whatsappNumber}`} target="_blank" rel="noreferrer" className="hover:text-accent">WhatsApp: {CONTACT.whatsappDisplay}</a><br/><a href={`mailto:${CONTACT.email}`} className="hover:text-accent">{CONTACT.email}</a><br/><a href={mapsSearchUrl} target="_blank" rel="noreferrer" className="hover:text-accent">{CONTACT.address}</a><br/>Uyo, Eket, Akwa Ibom and environs</p></div>
       </div>
       <div className="mx-auto mt-16 flex max-w-[1500px] flex-col gap-5 border-t border-primary-foreground/20 pt-8 md:flex-row md:items-end md:justify-between"><p className="font-display text-4xl md:text-6xl">Clean spaces. Properly cared for.</p><div className="text-[10px] uppercase tracking-[0.15em] text-primary-foreground/50"><p>© 2026 LESBEST</p><a href="https://clikconsult.com.ng" target="_blank" rel="noreferrer" className="mt-2 inline-block normal-case tracking-normal transition-colors hover:text-accent">Made with ❤️ by ClikConsult</a></div></div>
     </footer>
