@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { stagger } from "@/lib/motion";
 import { AnimatedNaira } from "@/components/animated-naira";
 import { Check, Clipboard, Minus, Plus, RotateCcw } from "lucide-react";
 import { useMemo, useState } from "react";
@@ -59,7 +60,7 @@ function OptionList({
   onChange: (slug: string) => void;
 }) {
   return (
-    <fieldset className="border-0 p-0">
+    <fieldset data-reveal="up" className="border-0 p-0">
       <legend className="mb-5 text-[10px] font-semibold uppercase tracking-[0.16em] text-secondary">
         {legend}
       </legend>
@@ -173,7 +174,7 @@ export function QuoteEstimator({
   return (
     <div className="grid gap-14 md:grid-cols-12 md:gap-10">
       <div className="space-y-14 md:col-span-7">
-        <div>
+        <div data-reveal="up">
           <div className="mb-5 flex items-center justify-between gap-4">
             <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-secondary">
               Start with a scenario
@@ -270,7 +271,7 @@ export function QuoteEstimator({
           onChange={setFrequencySlug}
         />
 
-        <fieldset className="border-0 p-0">
+        <fieldset data-reveal="up" className="border-0 p-0">
           <legend className="mb-5 text-[10px] font-semibold uppercase tracking-[0.16em] text-secondary">
             05 / Considered extras
           </legend>
@@ -305,7 +306,7 @@ export function QuoteEstimator({
         </fieldset>
       </div>
 
-      <aside className="md:col-span-4 md:col-start-9">
+      <aside data-reveal="up" style={stagger(0, 0, 200)} className="md:col-span-4 md:col-start-9">
         <div className="border-t border-primary pt-6 md:sticky md:top-28">
           <Eyebrow>Indicative investment</Eyebrow>
           <p aria-live="polite" className="font-display text-5xl leading-[0.95] md:text-6xl">

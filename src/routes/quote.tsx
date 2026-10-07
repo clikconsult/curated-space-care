@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { stagger } from "@/lib/motion";
 import { QuoteEstimator } from "@/components/quote-estimator";
 import { Eyebrow } from "@/components/editorial";
 import { seo } from "@/lib/seo";
@@ -37,7 +38,7 @@ function QuotePage() {
               <em className="text-secondary">before you ask.</em>
             </h1>
           </div>
-          <p className="max-w-md text-base leading-8 text-muted-foreground md:col-span-4 md:col-start-9">
+          <p data-reveal="up" style={stagger(0, 0, 200)} className="max-w-md text-base leading-8 text-muted-foreground md:col-span-4 md:col-start-9">
             Choose the property, the service and the rhythm. We show an indicative range as you
             go, then pass the full brief to the team in one message.
           </p>
@@ -50,12 +51,12 @@ function QuotePage() {
 
       <section className="bg-primary py-16 text-primary-foreground md:py-24">
         <div className={`${wrap} grid gap-10 md:grid-cols-12 md:items-end`}>
-          <div className="md:col-span-8">
+          <div data-reveal="up" className="md:col-span-8">
             <h2 className="text-4xl leading-[0.95] md:text-6xl">
               Every figure above is a guide. The review is what makes it exact.
             </h2>
           </div>
-          <p className="max-w-sm text-sm leading-7 text-primary-foreground/70 md:col-span-3 md:col-start-10">
+          <p data-reveal="up" style={stagger(0, 0, 200)} className="max-w-sm text-sm leading-7 text-primary-foreground/70 md:col-span-3 md:col-start-10">
             A walk-through takes fifteen minutes. We look at materials, traffic and the finish you
             expect, then confirm a firm price in writing.
           </p>
