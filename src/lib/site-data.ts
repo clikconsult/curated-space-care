@@ -54,7 +54,7 @@ export const photos = {
 
 export const CONTACT = {
   phoneDisplay: "07018737460",
-  phoneNumber: "07018737460",
+  phoneNumber: "+2347018737460",
   whatsappNumber: "2348162573736",
   whatsappDisplay: "08162573736",
   email: "contact@lesbest.com.ng",
