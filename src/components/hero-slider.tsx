@@ -38,14 +38,14 @@ const slides = [
     eyebrow: "Industrial & commercial cleaning",
     line: "Where business happens,", accent: "spotless.",
     body: "Scheduled programmes for offices, factories and production floors, built around your operating hours.",
-    primary: { label: "Talk to us", to: "/contact" }, secondary: { label: "Our services", to: "/services" },
+    primary: { label: "Request a quote", to: "/contact" }, secondary: { label: "Industrial cleaning", to: "/services" },
   },
   {
     image: kitchen, position: "50% 0%", alt: "Two Lesbest cleaners wiping a stone counter and vacuuming the floor of a modern Nigerian kitchen",
     eyebrow: "Deep cleaning",
     line: "Reset every surface,", accent: "top to bottom.",
     body: "For move-ins, post-renovation spaces and seasonal resets: detailed work on every finish and fitting.",
-    primary: { label: "Book a deep clean", to: "/contact" }, secondary: { label: "How we work", to: "/about" },
+    primary: { label: "Request a quote", to: "/contact" }, secondary: { label: "Deep cleaning", to: "/services" },
   },
   {
     image: bedroom, position: "50% 20%", alt: "A Lesbest cleaner dusting a bedside table in a calm master bedroom",
