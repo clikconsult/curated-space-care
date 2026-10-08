@@ -31,28 +31,28 @@ const slides = [
     eyebrow: "Home cleaning · Uyo, Akwa Ibom",
     line: "Room by room,", accent: "beautifully kept.",
     body: "Reliable cleaning for apartments, family homes and private residences, with careful attention to kitchens, bathrooms and your finishes.",
-    primary: { label: "Request a quote", to: "/contact" }, secondary: { label: "Home cleaning", to: "/services" },
+    primary: { label: "Request a quote", to: "/contact" }, secondary: { label: "Home cleaning", slug: "home" },
   },
   {
     image: industrial, position: "50% 45%", alt: "Lesbest team cleaning a food-and-beverage production facility",
     eyebrow: "Industrial & commercial cleaning",
     line: "Where business happens,", accent: "spotless.",
     body: "Scheduled programmes for offices, factories and production floors, built around your operating hours.",
-    primary: { label: "Request a quote", to: "/contact" }, secondary: { label: "Industrial cleaning", to: "/services" },
+    primary: { label: "Request a quote", to: "/contact" }, secondary: { label: "Industrial cleaning", slug: "industrial" },
   },
   {
     image: kitchen, position: "50% 0%", alt: "Two Lesbest cleaners wiping a stone counter and vacuuming the floor of a modern Nigerian kitchen",
     eyebrow: "Deep cleaning",
     line: "Reset every surface,", accent: "top to bottom.",
     body: "For move-ins, post-renovation spaces and seasonal resets: detailed work on every finish and fitting.",
-    primary: { label: "Request a quote", to: "/contact" }, secondary: { label: "Deep cleaning", to: "/services" },
+    primary: { label: "Request a quote", to: "/contact" }, secondary: { label: "Deep cleaning", slug: "deep-cleaning" },
   },
   {
     image: bedroom, position: "50% 20%", alt: "A Lesbest cleaner dusting a bedside table in a calm master bedroom",
     eyebrow: "Resident cleaning",
     line: "A familiar team,", accent: "every visit.",
     body: "Ongoing care for estates, residences and serviced apartments, from a consistent team who know your property, on a schedule that suits you.",
-    primary: { label: "Request a quote", to: "/contact" }, secondary: { label: "Resident cleaning", to: "/services" },
+    primary: { label: "Request a quote", to: "/contact" }, secondary: { label: "Resident cleaning", slug: "resident" },
   },
 ] as const;
 
@@ -114,7 +114,7 @@ export function HeroSlider() {
               <motion.p variants={rise} className="max-w-lg text-sm leading-7 text-primary-foreground/85">{s.body}</motion.p>
               <motion.div variants={rise} className="flex flex-wrap gap-3">
                 <Button asChild className="bg-primary-foreground text-primary hover:bg-accent"><Link to={s.primary.to}>{s.primary.label}</Link></Button>
-                <Button asChild variant="light"><Link to={s.secondary.to}>{s.secondary.label}</Link></Button>
+                <Button asChild variant="light">{"slug" in s.secondary ? <Link to="/services/$serviceSlug" params={{ serviceSlug: s.secondary.slug }}>{s.secondary.label}</Link> : <Link to={s.secondary.to}>{s.secondary.label}</Link>}</Button>
               </motion.div>
             </div>
           </motion.div>
