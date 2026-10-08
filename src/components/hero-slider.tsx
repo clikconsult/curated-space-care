@@ -28,10 +28,10 @@ const slides = [
   },
   {
     image: bathroom, position: "50% 43%", alt: "A Lesbest cleaner polishing the floor of a luxury bathroom",
-    eyebrow: "Premium property care · Uyo, Akwa Ibom",
-    line: "A higher standard", accent: "of clean.",
-    body: "Professional cleaning, fumigation and property care for homes, offices and commercial spaces in Uyo, Eket and nearby areas.",
-    primary: { label: "Request a quote", to: "/contact" }, secondary: { label: "Explore services", to: "/services" },
+    eyebrow: "Home cleaning · Uyo, Akwa Ibom",
+    line: "Room by room,", accent: "beautifully kept.",
+    body: "Reliable cleaning for apartments, family homes and private residences, with careful attention to kitchens, bathrooms and your finishes.",
+    primary: { label: "Request a quote", to: "/contact" }, secondary: { label: "Home cleaning", to: "/services" },
   },
   {
     image: industrial, position: "50% 45%", alt: "Lesbest team cleaning a food-and-beverage production facility",
@@ -49,10 +49,10 @@ const slides = [
   },
   {
     image: bedroom, position: "50% 20%", alt: "A Lesbest cleaner dusting a bedside table in a calm master bedroom",
-    eyebrow: "Home & resident cleaning",
-    line: "Your home, kept", accent: "quietly perfect.",
-    body: "Discreet, consistent care from a familiar team, so your space stays exactly as you like it.",
-    primary: { label: "Request a quote", to: "/contact" }, secondary: { label: "Home cleaning", to: "/services" },
+    eyebrow: "Resident cleaning",
+    line: "A familiar team,", accent: "every visit.",
+    body: "Ongoing care for estates, residences and serviced apartments, from a consistent team who know your property, on a schedule that suits you.",
+    primary: { label: "Request a quote", to: "/contact" }, secondary: { label: "Resident cleaning", to: "/services" },
   },
 ] as const;
 
