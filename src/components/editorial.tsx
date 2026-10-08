@@ -3,8 +3,8 @@ import { ArrowRight, ArrowLeftRight, ChevronLeft, ChevronRight } from "lucide-re
 import { Button } from "@/components/ui/button";
 import { images, photos, whatsappEnquiry } from "@/lib/site-data";
 import { useEffect, useRef, useState } from "react";
-import beforeLivingroom from "@/assets/lesbest-before-livingroom.webp";
-import afterLivingroom from "@/assets/lesbest-after-livingroom.webp";
+import beforeLivingroom from "@/assets/lesbest-before-duplex.webp";
+import afterLivingroom from "@/assets/lesbest-after-duplex.webp";
 
 export function Eyebrow({ children, light = false }: { children: React.ReactNode; light?: boolean }) { return <p className={`mb-5 text-[10px] font-semibold uppercase tracking-[0.18em] ${light ? "text-secondary" : "text-secondary"}`}>{children}</p>; }
 
@@ -53,10 +53,10 @@ export function BeforeAfter() {
   }, []);
 
   return (
-    <div ref={wrapRef} className="relative aspect-[4/3] overflow-hidden bg-muted select-none md:aspect-[16/9]">
-      <img src={beforeLivingroom} alt="A newly built living room and kitchen before Lesbest's post-construction clean, with a dust-covered floor" loading="lazy" className="absolute inset-0 h-full w-full object-cover object-[center_35%]" width={1200} height={896} />
+    <div ref={wrapRef} style={{ containerType: "inline-size" }} className="relative aspect-[4/3] overflow-hidden bg-muted select-none md:aspect-[16/9]">
+      <img src={beforeLivingroom} alt="Illustration of a newly built double-height living room before a post-construction clean, with a dusty, stained floor and leftover building materials" loading="lazy" className="absolute inset-0 h-full w-full object-cover object-[center_60%]" width={1448} height={1086} />
       <div className="absolute inset-y-0 left-0 overflow-hidden" style={{ width: `${value}%` }}>
-        <img src={afterLivingroom} alt="The same living room and kitchen after Lesbest's post-construction clean, with the floor polished to a mirror finish" loading="lazy" className="h-full max-w-none object-cover object-[center_35%]" style={{ width: "calc(100vw - 40px)", maxWidth: "1500px" }} width={1200} height={896} />
+        <img src={afterLivingroom} alt="Illustration of the same living room after a post-construction clean, with the floor polished to a mirror finish" loading="lazy" className="h-full max-w-none object-cover object-[center_60%]" style={{ width: "100cqw" }} width={1448} height={1086} />
       </div>
 
       <div className="pointer-events-none absolute inset-y-0 w-0.5 bg-primary-foreground shadow-[0_0_0_1px_rgba(0,0,0,.15)]" style={{ left: `${value}%` }} />
