@@ -17,6 +17,7 @@ import { Route as PortfolioRouteImport } from './routes/portfolio'
 import { Route as QuoteRouteImport } from './routes/quote'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ApiChatRouteImport } from './routes/api.chat'
+import { Route as ApiContactRouteImport } from './routes/api.contact'
 import { Route as BlogArticleIdRouteImport } from './routes/blog_.$articleId'
 import { Route as PortfolioProjectIdRouteImport } from './routes/portfolio_.$projectId'
 import { Route as ServicesServiceSlugRouteImport } from './routes/services_.$serviceSlug'
@@ -61,6 +62,11 @@ const ApiChatRoute = ApiChatRouteImport.update({
   path: '/api/chat',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiContactRoute = ApiContactRouteImport.update({
+  id: '/api/contact',
+  path: '/api/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BlogArticleIdRoute = BlogArticleIdRouteImport.update({
   id: '/blog_/$articleId',
   path: '/blog/$articleId',
@@ -86,6 +92,7 @@ export interface FileRoutesByFullPath {
   '/quote': typeof QuoteRoute
   '/services': typeof ServicesRoute
   '/api/chat': typeof ApiChatRoute
+  '/api/contact': typeof ApiContactRoute
   '/blog/$articleId': typeof BlogArticleIdRoute
   '/portfolio/$projectId': typeof PortfolioProjectIdRoute
   '/services/$serviceSlug': typeof ServicesServiceSlugRoute
@@ -99,6 +106,7 @@ export interface FileRoutesByTo {
   '/quote': typeof QuoteRoute
   '/services': typeof ServicesRoute
   '/api/chat': typeof ApiChatRoute
+  '/api/contact': typeof ApiContactRoute
   '/blog/$articleId': typeof BlogArticleIdRoute
   '/portfolio/$projectId': typeof PortfolioProjectIdRoute
   '/services/$serviceSlug': typeof ServicesServiceSlugRoute
@@ -113,6 +121,7 @@ export interface FileRoutesById {
   '/quote': typeof QuoteRoute
   '/services': typeof ServicesRoute
   '/api/chat': typeof ApiChatRoute
+  '/api/contact': typeof ApiContactRoute
   '/blog_/$articleId': typeof BlogArticleIdRoute
   '/portfolio_/$projectId': typeof PortfolioProjectIdRoute
   '/services_/$serviceSlug': typeof ServicesServiceSlugRoute
@@ -128,6 +137,7 @@ export interface FileRouteTypes {
     | '/quote'
     | '/services'
     | '/api/chat'
+    | '/api/contact'
     | '/blog/$articleId'
     | '/portfolio/$projectId'
     | '/services/$serviceSlug'
@@ -141,6 +151,7 @@ export interface FileRouteTypes {
     | '/quote'
     | '/services'
     | '/api/chat'
+    | '/api/contact'
     | '/blog/$articleId'
     | '/portfolio/$projectId'
     | '/services/$serviceSlug'
@@ -154,6 +165,7 @@ export interface FileRouteTypes {
     | '/quote'
     | '/services'
     | '/api/chat'
+    | '/api/contact'
     | '/blog_/$articleId'
     | '/portfolio_/$projectId'
     | '/services_/$serviceSlug'
@@ -168,6 +180,7 @@ export interface RootRouteChildren {
   QuoteRoute: typeof QuoteRoute
   ServicesRoute: typeof ServicesRoute
   ApiChatRoute: typeof ApiChatRoute
+  ApiContactRoute: typeof ApiContactRoute
   BlogArticleIdRoute: typeof BlogArticleIdRoute
   PortfolioProjectIdRoute: typeof PortfolioProjectIdRoute
   ServicesServiceSlugRoute: typeof ServicesServiceSlugRoute
@@ -231,6 +244,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiChatRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/contact': {
+      id: '/api/contact'
+      path: '/api/contact'
+      fullPath: '/api/contact'
+      preLoaderRoute: typeof ApiContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/blog_/$articleId': {
       id: '/blog_/$articleId'
       path: '/blog/$articleId'
@@ -264,6 +284,7 @@ const rootRouteChildren: RootRouteChildren = {
   QuoteRoute: QuoteRoute,
   ServicesRoute: ServicesRoute,
   ApiChatRoute: ApiChatRoute,
+  ApiContactRoute: ApiContactRoute,
   BlogArticleIdRoute: BlogArticleIdRoute,
   PortfolioProjectIdRoute: PortfolioProjectIdRoute,
   ServicesServiceSlugRoute: ServicesServiceSlugRoute,
