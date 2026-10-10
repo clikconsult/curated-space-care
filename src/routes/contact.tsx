@@ -9,6 +9,7 @@ const localBusiness = {
   url: SITE_URL,
   telephone: CONTACT.phoneNumber,
   email: CONTACT.email,
+  sameAs: [CONTACT.instagramUrl],
   address: {
     "@type": "PostalAddress",
     streetAddress: "No. 40 Ekpo Obot Street, off Brooks Street",
