@@ -6,7 +6,6 @@ import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { Pause, Play } from "lucide-react";
 import { lazy, Suspense, useCallback, useEffect, useMemo, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Eyebrow } from "@/components/editorial";
 import bathroom from "@/assets/lesbest-clean-bathroom.webp";
 import industrial from "@/assets/lesbest-clean-industrial.webp";
 import kitchen from "@/assets/lesbest-deep-clean-kitchen.webp";
@@ -106,7 +105,7 @@ export function HeroSlider() {
       <div className={`${wrap} pointer-events-none relative flex min-h-[62vh] flex-col justify-end pb-24 md:min-h-[calc(100vh-4.5rem)] md:pb-28`}>
         <AnimatePresence mode="wait" initial={false}>
           <motion.div key={selected} variants={container} initial="hidden" animate="show" exit="exit" className="pointer-events-auto">
-            <motion.div variants={rise}><Eyebrow light>{s.eyebrow}</Eyebrow></motion.div>
+            <motion.div variants={rise}><p className="mb-5 text-[10px] font-semibold uppercase tracking-[0.18em] text-primary-foreground [text-shadow:0_1px_10px_rgb(0_0_0/0.65)]">{s.eyebrow}</p></motion.div>
             <motion.h1 variants={rise} className="max-w-5xl text-5xl leading-[.9] md:text-8xl lg:text-[8.5rem]">
               {s.line}<br /><em className="text-accent">{s.accent}</em>
             </motion.h1>
