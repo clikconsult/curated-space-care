@@ -265,7 +265,7 @@ export function QuoteEstimator({
         </div>
 
         <OptionList
-          legend="04 / The rhythm"
+          legend="04 / How often"
           options={frequencies}
           value={frequencySlug}
           onChange={setFrequencySlug}

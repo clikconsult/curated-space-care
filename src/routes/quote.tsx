@@ -16,7 +16,7 @@ export const Route = createFileRoute("/quote")({
       title: "Instant Estimate — LESBEST Property Care",
       description:
         "Build an indicative estimate for cleaning and property care in Uyo, Eket, Akwa Ibom and surrounding areas, then send it straight to the team.",
-      ogDescription: "Set the property, service and rhythm. See an indicative range, then send it to us.",
+      ogDescription: "Set the property, service and how often. See an indicative range, then send it to us.",
       path: "/quote",
       image: "quote",
       imageAlt: "A calm marble living room with palm trees outside the sliding doors",
@@ -39,7 +39,7 @@ function QuotePage() {
             </h1>
           </div>
           <p data-reveal="up" style={stagger(0, 0, 200)} className="max-w-md text-base leading-8 text-muted-foreground md:col-span-4 md:col-start-9">
-            Choose the property, the service and the rhythm. We show an indicative range as you
+            Choose the property, the service and how often you need us. We show an indicative range as you
             go, then pass the full brief to the team in one message.
           </p>
         </div>
