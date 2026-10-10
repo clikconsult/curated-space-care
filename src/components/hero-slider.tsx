@@ -112,9 +112,9 @@ export function HeroSlider() {
             </motion.h1>
             <div className="mt-7 flex max-w-4xl flex-col gap-6 border-t border-primary-foreground/40 pt-5 md:flex-row md:items-end md:justify-between">
               <motion.p variants={rise} className="max-w-lg text-sm leading-7 text-primary-foreground/85">{s.body}</motion.p>
-              <motion.div variants={rise} className="flex flex-wrap gap-3">
-                <Button asChild className="bg-primary-foreground text-primary hover:bg-accent"><Link to={s.primary.to}>{s.primary.label}</Link></Button>
-                <Button asChild variant="light">{"slug" in s.secondary ? <Link to="/services/$serviceSlug" params={{ serviceSlug: s.secondary.slug }}>{s.secondary.label}</Link> : <Link to={s.secondary.to}>{s.secondary.label}</Link>}</Button>
+              <motion.div variants={rise} className="flex gap-2 sm:flex-wrap sm:gap-3 md:shrink-0 md:flex-nowrap">
+                <Button asChild className="bg-primary-foreground text-primary hover:bg-accent min-w-0 flex-1 px-2 text-[10px] tracking-[0.1em] sm:flex-none sm:px-6 sm:text-[11px] sm:tracking-[0.14em]"><Link to={s.primary.to}>{s.primary.label}</Link></Button>
+                <Button asChild variant="light" className="min-w-0 flex-1 px-2 text-[10px] tracking-[0.1em] sm:flex-none sm:px-6 sm:text-[11px] sm:tracking-[0.14em]">{"slug" in s.secondary ? <Link to="/services/$serviceSlug" params={{ serviceSlug: s.secondary.slug }}>{s.secondary.label}</Link> : <Link to={s.secondary.to}>{s.secondary.label}</Link>}</Button>
               </motion.div>
             </div>
           </motion.div>
