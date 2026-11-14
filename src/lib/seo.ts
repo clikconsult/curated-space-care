@@ -4,6 +4,12 @@
 export const SITE_URL = "https://lesbest.com.ng";
 export const SITE_NAME = "LESBEST";
 
+// "18 September 2026" -> "2026-09-18"; undefined if the text is not a parsable date.
+export function isoDate(text: string): string | undefined {
+  const d = new Date(`${text} UTC`);
+  return Number.isNaN(d.getTime()) ? undefined : d.toISOString().slice(0, 10);
+}
+
 const ogUrl = (name: string) => `${SITE_URL}/og/${name}.jpg`;
 
 type SeoInput = {

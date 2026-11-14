@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { SITE_URL } from "@/lib/seo";
+import { SITE_URL, isoDate } from "@/lib/seo";
 import { articles, services } from "@/lib/site-data";
 
 // Sitemap generated from site-data so new services and articles appear automatically.
@@ -7,11 +7,6 @@ import { articles, services } from "@/lib/site-data";
 const STATIC_PATHS = ["/", "/services", "/about", "/quote", "/contact", "/blog"];
 
 const esc = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-
-function isoDate(text: string): string | undefined {
-  const d = new Date(`${text} UTC`);
-  return Number.isNaN(d.getTime()) ? undefined : d.toISOString().slice(0, 10);
-}
 
 function entry(path: string, lastmod?: string) {
   return `  <url><loc>${esc(SITE_URL + path)}</loc>${lastmod ? `<lastmod>${lastmod}</lastmod>` : ""}</url>`;
