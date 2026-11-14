@@ -13,6 +13,7 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteShell } from "../components/site-shell";
+import { localBusiness } from "../lib/local-business";
 
 function NotFoundComponent() {
   return (
@@ -89,6 +90,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:image", content: "https://lesbest.com.ng/og/default.jpg" },
     ],
+    scripts: [{ type: "application/ld+json", children: JSON.stringify(localBusiness) }],
     links: [
       {
         rel: "stylesheet",
