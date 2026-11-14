@@ -2,8 +2,7 @@ import { SITE_NAME, SITE_URL } from "@/lib/seo";
 import { CONTACT, mapsSearchUrl } from "@/lib/site-data";
 
 // LocalBusiness structured data, rendered site-wide from the root route.
-// Only facts that exist elsewhere in the site are included. Add openingHoursSpecification,
-// and geo coordinates once the Google Business Profile pin is confirmed to sit on the street address.
+// Only facts that exist elsewhere in the site are included. Add geo coordinates once the Google Business Profile pin is confirmed to sit on the street address.
 export const localBusiness = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
@@ -23,6 +22,16 @@ export const localBusiness = {
     addressRegion: "Akwa Ibom",
     addressCountry: "NG",
   },
+  // Sunday is closed, so it is simply left out.
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "08:00",
+      closes: "17:30",
+    },
+    { "@type": "OpeningHoursSpecification", dayOfWeek: "Saturday", opens: "10:00", closes: "16:30" },
+  ],
   areaServed: [
     { "@type": "City", name: "Uyo" },
     { "@type": "City", name: "Eket" },
