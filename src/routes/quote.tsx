@@ -13,7 +13,7 @@ export const Route = createFileRoute("/quote")({
   }),
   head: () =>
     seo({
-      title: "Instant Estimate — LESBEST Property Care",
+      title: "Instant Cleaning Estimate in Uyo & Eket | LESBEST",
       description:
         "Build an indicative estimate for cleaning and property care in Uyo, Eket, Akwa Ibom and surrounding areas, then send it straight to the team.",
       ogDescription: "Set the property, service and how often. See an indicative range, then send it to us.",
