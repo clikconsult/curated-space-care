@@ -3,7 +3,7 @@ import { CONTACT, mapsSearchUrl } from "@/lib/site-data";
 
 // LocalBusiness structured data, rendered site-wide from the root route.
 // Only facts that exist elsewhere in the site are included. Add openingHoursSpecification,
-// geo coordinates and the Google Business Profile link (in sameAs) once they are confirmed.
+// and geo coordinates once the Google Business Profile pin is confirmed to sit on the street address.
 export const localBusiness = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
@@ -14,7 +14,7 @@ export const localBusiness = {
   image: `${SITE_URL}/og/default.jpg`,
   telephone: CONTACT.phoneNumber,
   email: CONTACT.email,
-  sameAs: [CONTACT.instagramUrl],
+  sameAs: [CONTACT.instagramUrl, "https://maps.app.goo.gl/HwG3wB3Dyi2KgUfg8"],
   hasMap: mapsSearchUrl,
   address: {
     "@type": "PostalAddress",
