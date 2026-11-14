@@ -13,7 +13,7 @@ export const localBusiness = {
   image: `${SITE_URL}/og/default.jpg`,
   telephone: CONTACT.phoneNumber,
   email: CONTACT.email,
-  sameAs: [CONTACT.instagramUrl, "https://www.facebook.com/share/1F65f4BvsU/", "https://maps.app.goo.gl/HwG3wB3Dyi2KgUfg8"],
+  sameAs: [CONTACT.instagramUrl, CONTACT.facebookUrl, "https://maps.app.goo.gl/HwG3wB3Dyi2KgUfg8"],
   hasMap: mapsSearchUrl,
   address: {
     "@type": "PostalAddress",

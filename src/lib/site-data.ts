@@ -60,6 +60,7 @@ export const CONTACT = {
   email: "contact@lesbest.com.ng",
   instagramUrl: "https://www.instagram.com/lesbestservices247/",
   instagramHandle: "@lesbestservices247",
+  facebookUrl: "https://www.facebook.com/share/1F65f4BvsU/",
   address: "No. 40 Ekpo Obot Street, off Brooks Street (by Oliver Twist), Uyo, Akwa Ibom State",
   // What Google Maps searches for. If the pin lands in the wrong place, paste a more exact query here.
   mapsQuery: "40 Ekpo Obot Street, off Brooks Street, Uyo, Akwa Ibom, Nigeria",
