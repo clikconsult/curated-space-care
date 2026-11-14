@@ -16,6 +16,7 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as PortfolioRouteImport } from './routes/portfolio'
 import { Route as QuoteRouteImport } from './routes/quote'
 import { Route as ServicesRouteImport } from './routes/services'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ApiChatRouteImport } from './routes/api.chat'
 import { Route as ApiContactRouteImport } from './routes/api.contact'
 import { Route as BlogArticleIdRouteImport } from './routes/blog_.$articleId'
@@ -57,6 +58,11 @@ const ServicesRoute = ServicesRouteImport.update({
   path: '/services',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiChatRoute = ApiChatRouteImport.update({
   id: '/api/chat',
   path: '/api/chat',
@@ -91,6 +97,7 @@ export interface FileRoutesByFullPath {
   '/portfolio': typeof PortfolioRoute
   '/quote': typeof QuoteRoute
   '/services': typeof ServicesRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/api/chat': typeof ApiChatRoute
   '/api/contact': typeof ApiContactRoute
   '/blog/$articleId': typeof BlogArticleIdRoute
@@ -105,6 +112,7 @@ export interface FileRoutesByTo {
   '/portfolio': typeof PortfolioRoute
   '/quote': typeof QuoteRoute
   '/services': typeof ServicesRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/api/chat': typeof ApiChatRoute
   '/api/contact': typeof ApiContactRoute
   '/blog/$articleId': typeof BlogArticleIdRoute
@@ -120,6 +128,7 @@ export interface FileRoutesById {
   '/portfolio': typeof PortfolioRoute
   '/quote': typeof QuoteRoute
   '/services': typeof ServicesRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/api/chat': typeof ApiChatRoute
   '/api/contact': typeof ApiContactRoute
   '/blog_/$articleId': typeof BlogArticleIdRoute
@@ -136,6 +145,7 @@ export interface FileRouteTypes {
     | '/portfolio'
     | '/quote'
     | '/services'
+    | '/sitemap.xml'
     | '/api/chat'
     | '/api/contact'
     | '/blog/$articleId'
@@ -150,6 +160,7 @@ export interface FileRouteTypes {
     | '/portfolio'
     | '/quote'
     | '/services'
+    | '/sitemap.xml'
     | '/api/chat'
     | '/api/contact'
     | '/blog/$articleId'
@@ -164,6 +175,7 @@ export interface FileRouteTypes {
     | '/portfolio'
     | '/quote'
     | '/services'
+    | '/sitemap.xml'
     | '/api/chat'
     | '/api/contact'
     | '/blog_/$articleId'
@@ -179,6 +191,7 @@ export interface RootRouteChildren {
   PortfolioRoute: typeof PortfolioRoute
   QuoteRoute: typeof QuoteRoute
   ServicesRoute: typeof ServicesRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   ApiChatRoute: typeof ApiChatRoute
   ApiContactRoute: typeof ApiContactRoute
   BlogArticleIdRoute: typeof BlogArticleIdRoute
@@ -237,6 +250,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/chat': {
       id: '/api/chat'
       path: '/api/chat'
@@ -283,6 +303,7 @@ const rootRouteChildren: RootRouteChildren = {
   PortfolioRoute: PortfolioRoute,
   QuoteRoute: QuoteRoute,
   ServicesRoute: ServicesRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   ApiChatRoute: ApiChatRoute,
   ApiContactRoute: ApiContactRoute,
   BlogArticleIdRoute: BlogArticleIdRoute,
